@@ -2,7 +2,7 @@
 
 # sensitive files
 /Cecile_WFD_Public_key.asc
-/notes
+notes
 .vscode
 
 # dependencies
