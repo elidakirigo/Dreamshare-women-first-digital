@@ -5,11 +5,7 @@ name: WFD deploy
 
 on:
    push:
-      branches: [main, development]
-
-defaults:
-   run:
-      working-directory: client
+      branches: [master] 
 
 jobs:
    build:
