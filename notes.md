@@ -9,3 +9,15 @@ https://restoreprivacy.com/email/best-encrypted-email/
 https://duckduckgo.com/?q=tools+to+send+encrypted+emails&ia=web
 
 https://www.youtube.com/results?search_query=How+to+Send+Encrypted+Email+-+What+You+Need+to+Know
+
+used
+
+-  shadcn-ui (Radix-ui)
+-  tailwind css
+-  axios
+-  Reactjs with nextjs
+-  nextAuth
+-  google cloud Authentication
+-  cypress
+-  Eslint + prettier + husky
+-  github action
