@@ -1,37 +1,83 @@
+'use client'
+
 import { AspectRatio } from '@/components/ui/aspect-ratio'
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import { signIn } from 'next-auth/react'
+import StepImage from '@/components/StepImage'
+import PartnersAvatars from '@/components/PartnersAvatars'
 
 export default function Home() {
 	return (
-		<div className=''>
-			<section className=''>
-				<header className='relative h-full w-full'>
-					<AspectRatio ratio={16 / 9}>
-						<Image src='/assets/formatted/party-bg.webp' alt='Image' className='object-cover ' fill={true} />
-					</AspectRatio>
-					{/* homepage description and call to action */}
-					<div className='flex items-center justify-center pt-5 absolute top-0 w-full'>
-						{/* login buttons */}
-						<Button
-							variant='link'
-							size='sm'
-							className='text-white'
-							// onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}
-						>
+		<main className=''>
+			<header className='relative h-full w-full'>
+				<AspectRatio ratio={16 / 9}>
+					<Image src='/assets/formatted/party-bg.webp' alt='Image' className='bg-gradient-to-r from-cyan-500 to-blue-500 object-cover' fill={true} />
+				</AspectRatio>
+				{/* homepage description and call to action */}
+				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 opacity-100 duration-500'>
+					{/* login buttons */}
+					<nav className='flex'>
+						<h1 className='hidden'>DREAMSHARE</h1>
+						<Button variant='link' size='sm' className='text-white' onClick={() => signIn('google')}>
 							Login
 						</Button>
-						<Button
-							variant='outline'
-							className='rounded-3xl text-white bg-transparent'
-							size='sm'
-							// onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}
-						>
+						<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
 							SignUp
 						</Button>
+					</nav>
+					<div>
+						<h1>SHARE YOUR HOLIDAY DREAM</h1>
+						<h2>And find the perfect partner to fullfill it</h2>
+						<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
+							Find your holiday partner
+						</Button>
 					</div>
-				</header>
+				</div>
+			</header>
+			<section>
+				<h2>How Dreamshare works?</h2>
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
 			</section>
-		</div>
+			<section>
+				<h2>Meet a partner for your best holiday</h2>
+				<PartnersAvatars />
+				<PartnersAvatars />
+				<PartnersAvatars />
+				<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
+					See other partners
+				</Button>
+			</section>
+			<section>
+				<h2>Discover holiday activity ideas</h2>
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' />
+			</section>
+			<section>
+				<div>
+					<h3>Crate your holiday activity</h3>
+					<p>Hi! What are your holiday interests?</p>
+					<div className=''>
+						<input className='w-full bg-transparent px-4 py-1 text-xl text-[#1A1818] placeholder-[#1A1818] outline-none focus:outline-none lg:text-2xl' type='search' name='search' placeholder='I am looking for...' />
+						<button type='submit' className='rounded-2xl'>
+							Search partners
+						</button>
+					</div>
+				</div>
+			</section>
+			<footer>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+			</footer>
+		</main>
 	)
 }
