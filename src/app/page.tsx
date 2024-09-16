@@ -13,7 +13,7 @@ export default function Home() {
 		<main className=''>
 			<header className='relative min-h-[30rem] h-full w-full'>
 				<AspectRatio ratio={16 / 9}>
-					<Image src='/assets/formatted/party-bg.webp' alt='Image' className='object-cover min-h-[30rem]' fill={true} />
+					<Image src='/assets/formatted/party-bg.webp' alt='' className='object-cover min-h-[30rem]' fill={true} />
 				</AspectRatio>
 				{/* homepage description and call to action */}
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 opacity-100 duration-500 p-6'>
@@ -48,8 +48,8 @@ export default function Home() {
 					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
 				</div>
 			</section>
-			<section>
-				<h2>Meet a partner for your best holiday</h2>
+			<section className='px-3 py-12'>
+				<h2 className='font-bold text-center text-2xl'>Meet a partner for your best holiday</h2>
 				<PartnersAvatars />
 				<PartnersAvatars />
 				<PartnersAvatars />
