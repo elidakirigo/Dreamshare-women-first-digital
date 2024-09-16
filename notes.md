@@ -28,3 +28,5 @@ chore(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0 feature(Button) : 
 semantics - https://www.w3schools.com/html/html5_semantic_elements.asp
 
 -  add aria on images for the disabled, keyboard usage
+
+https://www.themoviedb.org/talk/650a4179aede5900abd51018#650a4179aede5900abd5101b

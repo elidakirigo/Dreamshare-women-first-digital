@@ -55,13 +55,21 @@ export default function Home() {
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='#19D4CA' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='#667DF3' />
 				</div>
-				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50]' size='sm'>
+				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white' size='sm'>
 					See other partners
 				</Button>
 			</section>
 			<section className='px-3 py-6'>
 				<h2 className='text-center text-2xl font-bold'>Discover holiday activity ideas</h2>
-				{/* <HolidayImages ImageUrl='' title='' /> */}
+				<div className='mt-8 flex flex-col gap-4'>
+					<HolidayImages ImageUrl='folco' title='Sports and Activities' />
+					<HolidayImages ImageUrl='food-bowl' title='Wellness and Health' />
+					<HolidayImages ImageUrl='mesut' title='Extreme Sports and Expeditions' />
+					<HolidayImages ImageUrl='oppo' title='Games' />
+					<HolidayImages ImageUrl='culture' title='Culture and Education' />
+					<HolidayImages ImageUrl='mor-shani' title='Enjomet and Relaxation' />
+					<HolidayImages ImageUrl='sunshine' title='Trevelling' />
+				</div>
 			</section>
 			<section>
 				<div>
