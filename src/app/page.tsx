@@ -1,24 +1,23 @@
 'use client'
-
-import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { signIn } from 'next-auth/react'
 import StepImage from '@/components/StepImage'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import Link from 'next/link'
+import HolidayImages from '@/components/HolidayImage'
 
 export default function Home() {
 	return (
 		<main className=''>
-			<header className='relative min-h-[30rem] h-full w-full'>
-				<AspectRatio ratio={16 / 9}>
-					<Image src='/assets/formatted/party-bg.webp' alt='' className='object-cover min-h-[30rem]' fill={true} />
-				</AspectRatio>
+			<header className='relative h-full min-h-[30rem] w-full'>
+				{/* <AspectRatio ratio={16 / 9}> */}
+				<Image src='/assets/formatted/party-bg.webp' alt='' className='min-h-[30rem] object-cover' fill={true} />
+				{/* </AspectRatio> */}
 				{/* homepage description and call to action */}
-				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 opacity-100 duration-500 p-6'>
+				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 p-6 opacity-100 duration-500'>
 					{/* login buttons */}
-					<nav className='flex justify-center items-center '>
+					<nav className='flex items-center justify-center'>
 						<h1 className='hidden'>DREAMSHARE</h1>
 						<Button variant='link' size='sm' className='text-white' onClick={() => signIn('google')}>
 							Login
@@ -27,49 +26,46 @@ export default function Home() {
 							SignUp
 						</Button>
 					</nav>
-					<div className='text-center text-white mt-16'>
+					<div className='mt-16 text-center text-white'>
 						<span className='font-bold'>DREAMSHARE</span>
-						<h1 className='font-bold my-6 text-3xl'>
+						<h1 className='my-6 text-3xl font-bold'>
 							SHARE YOUR <br />
 							HOLIDAY DREAM
 						</h1>
-						<p className='max-w-60 mx-auto'>And find the perfect partner to fullfill it</p>
-						<Button variant='ghost' className='rounded-3xl mt-6 bg-[#FF4E50] hover:border hover:border-white hover:bg-transparent hover:text-white text-white' size='sm'>
+						<p className='mx-auto max-w-60'>And find the perfect partner to fullfill it</p>
+						<Button variant='ghost' className='mt-6 rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 							Find your holiday partner
 						</Button>
 					</div>
 				</div>
 			</header>
 			<section className='px-3 py-12'>
-				<h2 className='text-center font-bold text-2xl'>How Dreamshare works?</h2>
-				<div className='flex flex-col gap-4 mt-8'>
+				<h2 className='text-center text-2xl font-bold'>How Dreamshare works?</h2>
+				<div className='mt-8 flex flex-col gap-4'>
 					<StepImage ImageUrl='/assets/formatted/bruce-mars.webp' step='1' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
 					<StepImage ImageUrl='/assets/formatted/mesut.webp' step='2' title='Morbi velit risus' description='Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.' />
 					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
 				</div>
 			</section>
-			<section className='px-3 py-12'>
-				<h2 className='font-bold text-center text-2xl'>Meet a partner for your best holiday</h2>
-				<PartnersAvatars />
-				<PartnersAvatars />
-				<PartnersAvatars />
-				<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
+			<section className='px-3 py-6'>
+				<h2 className='text-center text-2xl font-bold'>Meet a partner for your best holiday</h2>
+				<div className='mt-4 flex flex-col items-center justify-center p-4'>
+					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#FF4E50' />
+					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='#FFA710' />
+					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='#19D4CA' />
+					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='#667DF3' />
+				</div>
+				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50]' size='sm'>
 					See other partners
 				</Button>
 			</section>
-			<section>
-				<h2>Discover holiday activity ideas</h2>
-				{/* <StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' /> */}
+			<section className='px-3 py-6'>
+				<h2 className='text-center text-2xl font-bold'>Discover holiday activity ideas</h2>
+				{/* <HolidayImages ImageUrl='' title='' /> */}
 			</section>
 			<section>
 				<div>
-					<h3>Crate your holiday activity</h3>
+					<h2 className='text-center text-2xl font-bold'>Crate your holiday activity</h2>
 					<p>Hi! What are your holiday interests?</p>
 					<div className=''>
 						<input className='w-full bg-transparent px-4 py-1 text-xl text-[#1A1818] placeholder-[#1A1818] outline-none focus:outline-none lg:text-2xl' type='search' name='search' placeholder='I am looking for...' />
