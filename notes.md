@@ -30,5 +30,7 @@ fix(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0
 Test(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0
 ,style (e.g using prettier,linters),build ,
 
+semantics - https://www.w3schools.com/html/html5_semantic_elements.asp
+
 
 - add aria on images for the disabled, keyboard usage

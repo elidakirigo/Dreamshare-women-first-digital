@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { signIn } from 'next-auth/react'
 import StepImage from '@/components/StepImage'
 import PartnersAvatars from '@/components/PartnersAvatars'
+import Link from 'next/link'
 
 export default function Home() {
 	return (
@@ -73,10 +74,39 @@ export default function Home() {
 				</div>
 			</section>
 			<footer>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
+				<section>
+					<h1>DREAMSHARE</h1>
+				</section>
+				<section>
+					<h2>Company</h2>
+					<ul>
+						<li>
+							<Link href={'/'}>About</Link>
+						</li>
+						<li>
+							<Link href={'/'}>Contact</Link>
+						</li>
+						<li>
+							<Link href={'/'}>Press</Link>
+						</li>
+						<li>
+							<Link href={'/'}>Blog</Link>
+						</li>
+						<li>
+							<Link href={'/'}>Terms and Privacy</Link>
+						</li>
+						<li>
+							<Link href={'/'}>Help</Link>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Partners</h2>
+				</section>
+				<section>
+					<span>DESIGNED BY</span>
+					<Image src="/ARETO.svg" alt='' width={80} height={0} className='h-auto'/>
+				</section>
 			</footer>
 		</main>
 	)
