@@ -11,9 +11,9 @@ import Link from 'next/link'
 export default function Home() {
 	return (
 		<main className=''>
-			<header className='relative min-h-screen h-full w-full'>
+			<header className='relative min-h-[30rem] h-full w-full'>
 				<AspectRatio ratio={16 / 9}>
-					<Image src='/assets/formatted/party-bg.webp' alt='Image' className='object-cover min-h-screen' fill={true} />
+					<Image src='/assets/formatted/party-bg.webp' alt='Image' className='object-cover min-h-[30rem]' fill={true} />
 				</AspectRatio>
 				{/* homepage description and call to action */}
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 opacity-100 duration-500 p-6'>
@@ -34,17 +34,19 @@ export default function Home() {
 							HOLIDAY DREAM
 						</h1>
 						<p className='max-w-60 mx-auto'>And find the perfect partner to fullfill it</p>
-						<Button variant='outline' className='rounded-3xl mt-6 bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
+						<Button variant='ghost' className='rounded-3xl mt-6 bg-[#FF4E50] hover:border hover:border-white hover:bg-transparent hover:text-white text-white' size='sm'>
 							Find your holiday partner
 						</Button>
 					</div>
 				</div>
 			</header>
-			<section>
-				<h2>How Dreamshare works?</h2>
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
+			<section className='px-3 py-12'>
+				<h2 className='text-center font-bold text-2xl'>How Dreamshare works?</h2>
+				<div className='flex flex-col gap-4 mt-8'>
+					<StepImage ImageUrl='/assets/formatted/bruce-mars.webp' step='1' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
+					<StepImage ImageUrl='/assets/formatted/mesut.webp' step='2' title='Morbi velit risus' description='Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.' />
+					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
+				</div>
 			</section>
 			<section>
 				<h2>Meet a partner for your best holiday</h2>
@@ -57,13 +59,13 @@ export default function Home() {
 			</section>
 			<section>
 				<h2>Discover holiday activity ideas</h2>
+				{/* <StepImage ImageUrl='' />
 				<StepImage ImageUrl='' />
 				<StepImage ImageUrl='' />
 				<StepImage ImageUrl='' />
 				<StepImage ImageUrl='' />
 				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
-				<StepImage ImageUrl='' />
+				<StepImage ImageUrl='' /> */}
 			</section>
 			<section>
 				<div>
