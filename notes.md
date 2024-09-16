@@ -12,7 +12,7 @@ https://www.youtube.com/results?search_query=How+to+Send+Encrypted+Email+-+What+
 
 used
 
--  shadcn-ui (Radix-ui)
+-  shadcn-ui (Radix-ui) components library
 -  tailwind css
 -  axios
 -  Reactjs with nextjs
