@@ -106,4 +106,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any questions or issues, please reach out to [your.elidakirigo@gmail.com](mailto:elidakirigo@gmail.com).
+For any questions or issues, please reach out to [elidakirigo@gmail.com](mailto:elidakirigo@gmail.com).
