@@ -1,4 +1,6 @@
-# DreamShare
+# DreamShare 
+
+[![WFD deploy](https://github.com/elidakirigo/Dreamshare-women-first-digital/actions/workflows/node.yml/badge.svg?event=push)](https://github.com/elidakirigo/Dreamshare-women-first-digital/actions/workflows/node.yml)
 
 DreamShare is a dynamic and responsive web application designed to enhance travel experiences by connecting users with popular movies and celebrities. Built with Next.js, Tailwind CSS, and other modern tools, it offers seamless integration with third-party APIs to fetch live data and ensure optimal performance across devices.
 
