@@ -21,6 +21,7 @@ used
 -  cypress
 -  Eslint + prettier + husky
 -  github action
+- react-toastify
 
 
 chore(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0

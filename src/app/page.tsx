@@ -11,14 +11,14 @@ import Link from 'next/link'
 export default function Home() {
 	return (
 		<main className=''>
-			<header className='relative h-full w-full'>
+			<header className='relative min-h-screen h-full w-full'>
 				<AspectRatio ratio={16 / 9}>
-					<Image src='/assets/formatted/party-bg.webp' alt='Image' className='bg-gradient-to-r from-cyan-500 to-blue-500 object-cover' fill={true} />
+					<Image src='/assets/formatted/party-bg.webp' alt='Image' className='object-cover min-h-screen' fill={true} />
 				</AspectRatio>
 				{/* homepage description and call to action */}
-				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 opacity-100 duration-500'>
+				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 opacity-100 duration-500 p-6'>
 					{/* login buttons */}
-					<nav className='flex'>
+					<nav className='flex justify-center items-center '>
 						<h1 className='hidden'>DREAMSHARE</h1>
 						<Button variant='link' size='sm' className='text-white' onClick={() => signIn('google')}>
 							Login
@@ -27,10 +27,14 @@ export default function Home() {
 							SignUp
 						</Button>
 					</nav>
-					<div>
-						<h1>SHARE YOUR HOLIDAY DREAM</h1>
-						<h2>And find the perfect partner to fullfill it</h2>
-						<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
+					<div className='text-center text-white mt-16'>
+						<span className='font-bold'>DREAMSHARE</span>
+						<h1 className='font-bold my-6 text-3xl'>
+							SHARE YOUR <br />
+							HOLIDAY DREAM
+						</h1>
+						<p className='max-w-60 mx-auto'>And find the perfect partner to fullfill it</p>
+						<Button variant='outline' className='rounded-3xl mt-6 bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
 							Find your holiday partner
 						</Button>
 					</div>
@@ -105,7 +109,7 @@ export default function Home() {
 				</section>
 				<section>
 					<span>DESIGNED BY</span>
-					<Image src="/ARETO.svg" alt='' width={80} height={0} className='h-auto'/>
+					<Image src='/ARETO.svg' alt='' width={80} height={0} className='h-auto' />
 				</section>
 			</footer>
 		</main>
