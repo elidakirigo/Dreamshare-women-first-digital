@@ -59,7 +59,7 @@ export default function Home() {
 			<section className='px-3 py-6 text-center'>
 				<h2 className='text-center text-2xl font-bold'>Meet a partner for your best holiday</h2>
 				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:max-w-[1100px] md:grid-cols-2 lg:grid-cols-4'>
-					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='red' />
+					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#FF4E50' />
 					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
@@ -72,14 +72,14 @@ export default function Home() {
 			{/* holiday ideas section */}
 			<section className='w-full px-3 py-6 md:max-w-[1100px]'>
 				<h2 className='text-center text-2xl font-bold'>Discover holiday activity ideas</h2>
-				<div className='mx-auto mt-4 grid h-full w-full grid-cols-1 items-start gap-6 p-4 md:grid-cols-3'>
-					<HolidayImages ImageUrl='folco' title='Sports and Activities' span='col-span-1' />
-					<HolidayImages ImageUrl='food-bowl' title='Wellness and Health' span='col-span-1' />
-					<HolidayImages ImageUrl='mesut' title='Extreme Sports and Expeditions' span='col-span-1' />
-					<HolidayImages ImageUrl='oppo' title='Games' span='col-span-1' />
-					<HolidayImages ImageUrl='culture' title='Culture and Education' span='col-span-2' />
-					<HolidayImages ImageUrl='mor-shani' title='Enjomet and Relaxation' span='col-span-2' />
-					<HolidayImages ImageUrl='sunshine' title='Trevelling' span='col-span-1' />
+				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:grid-cols-3'>
+					<HolidayImages ImageUrl='folco' title='Sports and Activities' span={1} />
+					<HolidayImages ImageUrl='food-bowl' title='Wellness and Health' span={1} />
+					<HolidayImages ImageUrl='mesut' title='Extreme Sports and Expeditions' span={1} />
+					<HolidayImages ImageUrl='oppo' title='Games' span={1} />
+					<HolidayImages ImageUrl='culture' title='Culture and Education' span={2} />
+					<HolidayImages ImageUrl='mor-shani' title='Enjomet and Relaxation' span={2} />
+					<HolidayImages ImageUrl='sunshine' title='Trevelling' span={1} />
 				</div>
 			</section>
 
