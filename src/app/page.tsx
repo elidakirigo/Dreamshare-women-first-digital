@@ -84,12 +84,12 @@ export default function Home() {
 			</section>
 
 			{/* Create holiday activities section */}
-			<section className='px-3 py-6'>
-				<h2 className='text-center text-2xl font-bold'>Crate your holiday activity</h2>
-				<p className='my-6 font-light'>Hi! What are your holiday interests?</p>
-				<div className=''>
+			<section className='w-full px-3 py-6 md:max-w-[600px]'>
+				<h2 className='text-center text-2xl font-bold'>Create your holiday activity</h2>
+				<p className='my-6 text-center font-light'>Hi! What are your holiday interests?</p>
+				<div className='flex flex-col items-center justify-center md:flex-row'>
 					<input className='text-md w-full rounded-md border p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' />
-					<Button variant='ghost' className='mt-6 w-full rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-[#FF4E50] hover:bg-white hover:text-[#FF4E50]' size='sm'>
+					<Button variant='ghost' className='m-6 w-full rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-[#FF4E50] hover:bg-white hover:text-[#FF4E50] md:max-w-[200px]' size='sm'>
 						Search partners
 					</Button>
 				</div>
