@@ -6,8 +6,12 @@ import StepImage from '@/components/StepImage'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import Link from 'next/link'
 import HolidayImages from '@/components/HolidayImage'
+import { UsefetchMovies } from '@/Hooks/UseMovies'
 
 export default function Home() {
+	const u = UsefetchMovies()
+	console.log('p', u)
+
 	return (
 		<main className='flex flex-col items-center justify-center'>
 			<header className='relative h-full min-h-[30rem] w-full'>
