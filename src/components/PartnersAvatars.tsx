@@ -9,7 +9,7 @@ type PartnerProps = {
 }
 const PartnersAvatars = ({ name, location, svg, background }: PartnerProps) => {
 	return (
-		<>
+		<div className='flex flex-col items-center justify-center'>
 			<div className='relative mt-4'>
 				<Avatar className='h-auto w-[9rem] shadow-md'>
 					<AvatarImage alt='' src='https://github.com/shadcn.png' />
@@ -22,11 +22,11 @@ const PartnersAvatars = ({ name, location, svg, background }: PartnerProps) => {
 					</AvatarFallback>
 				</Avatar>
 
-				<Image src={`/assets/SVGs/${svg}.svg`} width={40} height={40} alt='' className={`z-1 absolute bottom-0 right-2 rounded-full border-4 border-white bg-lime-500 shadow-md p-2 `} />
+				<Image src={`/assets/SVGs/${svg}.svg`} width={40} height={40} alt='' className={`z-1 absolute bottom-0 right-2 rounded-full border-4 border-white bg-lime-500 p-2 shadow-md`} />
 			</div>
 			<h3 className='my-4 font-black'>{name}</h3>
 			<p className='text-center font-medium text-zinc-400'>{location}</p>
-		</>
+		</div>
 	)
 }
 

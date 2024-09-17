@@ -16,10 +16,10 @@ export default function Home() {
 				{/* </AspectRatio> */}
 
 				{/* homepage description and call to action */}
-				<div className='md:flex md:flex-col md:items-center absolute left-0 top-0 h-full w-full bg-zinc-900/20 p-6 opacity-100 duration-500'>
+				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
 					{/* login buttons */}
-					<nav className='flex items-center justify-center md:justify-between max-w-[1100px] w-full'>
-						<h1 className='hidden md:block text-white font-bold'>DREAMSHARE</h1>
+					<nav className='flex w-full max-w-[1100px] items-center justify-center md:justify-between'>
+						<h1 className='hidden font-bold text-white md:block'>DREAMSHARE</h1>
 						<div>
 							<Button variant='link' size='sm' className='text-white' onClick={() => signIn('google')}>
 								Login
@@ -33,11 +33,11 @@ export default function Home() {
 					{/* page call to to action */}
 					<div className='mt-16 text-center text-white'>
 						<span className='font-bold md:hidden'>DREAMSHARE</span>
-						<h1 className='my-6 text-3xl md:text-5xl font-bold'>
+						<h1 className='my-6 text-3xl font-bold md:text-5xl'>
 							SHARE YOUR <br />
 							HOLIDAY DREAM
 						</h1>
-						<p className='mx-auto max-w-68 md:w-full text-xl font-extralight'>And find the perfect partner to fullfill it</p>
+						<p className='max-w-68 mx-auto text-xl font-extralight md:w-full'>And find the perfect partner to fullfill it</p>
 						<Button variant='ghost' className='mt-6 rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 							Find your holiday partner
 						</Button>
@@ -46,9 +46,9 @@ export default function Home() {
 			</header>
 
 			{/* How it works section */}
-			<section className='px-3 py-12 w-full max-w-[1100px]'>
+			<section className='w-full max-w-[1100px] px-3 py-12'>
 				<h2 className='text-center text-2xl font-bold'>How Dreamshare works?</h2>
-				<div className='mt-8 flex flex-col md:flex-row justify-between  gap-4'>
+				<div className='mt-8 flex flex-col justify-between gap-4 md:flex-row'>
 					<StepImage ImageUrl='/assets/formatted/bruce-mars.webp' step='1' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
 					<StepImage ImageUrl='/assets/formatted/mesut.webp' step='2' title='Morbi velit risus' description='Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.' />
 					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
@@ -56,30 +56,30 @@ export default function Home() {
 			</section>
 
 			{/* holiday section */}
-			<section className='px-3 py-6'>
+			<section className='px-3 py-6 text-center'>
 				<h2 className='text-center text-2xl font-bold'>Meet a partner for your best holiday</h2>
-				<div className='mt-4 grid flex-col items-center justify-center p-4'>
+				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:max-w-[1100px] md:grid-cols-2 lg:grid-cols-4'>
 					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='red' />
 					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
 				</div>
-				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white' size='sm'>
+				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white md:w-auto' size='sm'>
 					See other partners
 				</Button>
 			</section>
 
 			{/* holiday ideas section */}
-			<section className='px-3 py-6'>
+			<section className='w-full px-3 py-6 md:max-w-[1100px]'>
 				<h2 className='text-center text-2xl font-bold'>Discover holiday activity ideas</h2>
-				<div className='mt-8 flex flex-col gap-4'>
-					<HolidayImages ImageUrl='folco' title='Sports and Activities' />
-					<HolidayImages ImageUrl='food-bowl' title='Wellness and Health' />
-					<HolidayImages ImageUrl='mesut' title='Extreme Sports and Expeditions' />
-					<HolidayImages ImageUrl='oppo' title='Games' />
-					<HolidayImages ImageUrl='culture' title='Culture and Education' />
-					<HolidayImages ImageUrl='mor-shani' title='Enjomet and Relaxation' />
-					<HolidayImages ImageUrl='sunshine' title='Trevelling' />
+				<div className='mx-auto mt-4 grid h-full w-full grid-cols-1 items-start gap-6 p-4 md:grid-cols-3'>
+					<HolidayImages ImageUrl='folco' title='Sports and Activities' span='col-span-1' />
+					<HolidayImages ImageUrl='food-bowl' title='Wellness and Health' span='col-span-1' />
+					<HolidayImages ImageUrl='mesut' title='Extreme Sports and Expeditions' span='col-span-1' />
+					<HolidayImages ImageUrl='oppo' title='Games' span='col-span-1' />
+					<HolidayImages ImageUrl='culture' title='Culture and Education' span='col-span-2' />
+					<HolidayImages ImageUrl='mor-shani' title='Enjomet and Relaxation' span='col-span-2' />
+					<HolidayImages ImageUrl='sunshine' title='Trevelling' span='col-span-1' />
 				</div>
 			</section>
 
@@ -88,22 +88,22 @@ export default function Home() {
 				<h2 className='text-center text-2xl font-bold'>Crate your holiday activity</h2>
 				<p className='my-6 font-light'>Hi! What are your holiday interests?</p>
 				<div className=''>
-					<input className=' border p-2 w-full  outline-none text-md font-normal rounded-md text-black  ' type='search' name='search' placeholder='Enter your insterests' />
-					<Button variant='ghost' className='mt-6 rounded-3xl bg-[#FF4E50] w-full text-white hover:border hover:border-[#FF4E50] hover:bg-white hover:text-[#FF4E50]' size='sm'>
+					<input className='text-md w-full rounded-md border p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' />
+					<Button variant='ghost' className='mt-6 w-full rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-[#FF4E50] hover:bg-white hover:text-[#FF4E50]' size='sm'>
 						Search partners
 					</Button>
 				</div>
 			</section>
 
 			{/* page footer */}
-			<footer className='flex flex-col items-center w-full border-t-2 border-[#FF4E50] mt-4 p-4 '>
-				<div className='flex flex-col items-center justify-center gap-6 md:flex-row md:justify-between md:items-start md:pt-8 w-full max-w-[1100px]'>
+			<footer className='mt-4 flex w-full flex-col items-center border-t-2 border-[#FF4E50] p-4'>
+				<div className='flex w-full max-w-[1100px] flex-col items-center justify-center gap-6 md:flex-row md:items-start md:justify-between md:pt-8'>
 					<section>
 						<h1 className='text-[#FF4E50]'>DREAMSHARE</h1>
 					</section>
 					<section>
-						<h2 className='font-bold text-center md:text-start'>Company</h2>
-						<ul className='inline-flex flex-wrap justify-center items-center gap-3 mt-4 text-gray-800 font-extralight md:block'>
+						<h2 className='text-center font-bold md:text-start'>Company</h2>
+						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-extralight text-gray-800 md:block'>
 							<li>
 								<Link href={'/'}>About</Link>
 							</li>
@@ -128,7 +128,7 @@ export default function Home() {
 						<h2 className='font-bold'>Partners</h2>
 					</section>
 					<section>
-						<span className='text-gray-500 font-bold text-xs text-center block'>DESIGNED BY</span>
+						<span className='block text-center text-xs font-bold text-gray-500'>DESIGNED BY</span>
 						<Image src='/ARETO.svg' alt='' width={100} height={0} className='h-auto py-4' />
 					</section>
 				</div>
