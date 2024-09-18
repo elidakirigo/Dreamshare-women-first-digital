@@ -1,6 +1,6 @@
 'use client'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 /**
  * requests done to IMDB
@@ -21,55 +21,29 @@ export const requests = {
  * Fetch movies url from api
  * @returns url
  */
-export const UseMoviesInstance = () => axios.create({ baseURL: process.env.NEXT_MOVIES_URL })
-
-/**
+export /**
  * Fetch user data from api returning all users
  * @returns an array of all users
  */
-export const UsefetchMovies = () => {
-	const [movies, setMovies] = useState([])
+const UsefetchMovies = () => {
+	const [movies, setMovies] = useState<{ results: [] }>({ results: [] })
 	// const dispatch = useDispatch()
 
-	useEffect(() => {
+	useMemo(() => {
 		const fetchMovies = async () => {
-			const options = {
-				method: 'GET',
-				url: 'https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup',
-				params: {
-					term: 'bojack',
-					country: 'uk',
-				},
-				headers: {
-					'x-rapidapi-key': 'f510619c58msh83c16e060744b4cp1940bfjsnf881fd6d4427',
-					'x-rapidapi-host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com',
-				},
-			}
+			// const UseMoviesInstance = () => axios.create({ baseURL: process.env.NEXT_MOVIES_URL })
+			const { data } = await axios.get('https://api.themoviedb.org/3/trending/all/week?api_key=08a54f16e86e6344d3964b95ed863abf&language=en-US')
+			// const data = await axios.get(`${process.env.NEXT_MOVIES_URL}${requests.fetchingTrending}`)
 
-			try {
-				const response = await axios.request(options)
-				console.log(response.data)
-			} catch (error) {
-				console.error(error)
-			}
+			setMovies(data)
 		}
-
 		fetchMovies()
 	}, [])
 
-	// return user
+	return movies
 }
 
 /**
  * fetches data from redux store and sends to homepage
  * @returns  users that were fetched from redux
  */
-// export const UseUser = () => {
-// 	const UserData = useAppSelector((state) => state.users)
-
-// 	const user = Usefetchuser()
-
-// 	if (UserData.users) return UserData.users
-
-// 	return user
-// }

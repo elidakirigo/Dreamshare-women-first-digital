@@ -6,8 +6,19 @@ import StepImage from '@/components/StepImage'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import Link from 'next/link'
 import HolidayImages from '@/components/HolidayImage'
+import { UsefetchMovies } from '@/Hooks/UseMovies'
+import { useState } from 'react'
 
 export default function Home() {
+	const [count, setCount] = useState(3)
+
+	const { results } = UsefetchMovies()
+	console.log(results)
+
+	const Counter = () => {
+		if (count < 20) setCount(count + 3)
+	}
+
 	return (
 		<main className='flex flex-col items-center justify-center'>
 			<header className='relative h-full min-h-[30rem] w-full'>
@@ -45,14 +56,20 @@ export default function Home() {
 				</div>
 			</header>
 
-			{/* How it works section */}
-			<section className='w-full max-w-[1100px] px-3 py-12'>
-				<h2 className='text-center text-2xl font-bold'>How Dreamshare works?</h2>
-				<div className='mt-8 flex flex-col justify-between gap-4 md:flex-row'>
-					<StepImage ImageUrl='/assets/formatted/bruce-mars.webp' step='1' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
-					<StepImage ImageUrl='/assets/formatted/mesut.webp' step='2' title='Morbi velit risus' description='Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.' />
-					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
+			{/* How it works section / most trending movies */}
+			<section className='w-full max-w-[1100px] px-3 py-12 text-center'>
+				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
+				<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
+					{results.slice(0, count).map(({vote_average,backdrop_path, id }) => (
+						<StepImage key={id} ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
+					))}
+
+					{/* <StepImage ImageUrl='/assets/formatted/mesut.webp' step='2' title='Morbi velit risus' description='Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.' />
+					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' /> */}
 				</div>
+				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#ff4e50] hover:text-white md:w-auto' onClick={Counter} size='sm'>
+					Read More
+				</Button>
 			</section>
 
 			{/* holiday section */}
@@ -63,7 +80,7 @@ export default function Home() {
 					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
-				</div>            
+				</div>
 				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white md:w-auto' size='sm'>
 					See other partners
 				</Button>
