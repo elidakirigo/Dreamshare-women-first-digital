@@ -10,7 +10,7 @@ DreamShare is a dynamic and responsive web application designed to enhance trave
 - **Axios**: Efficiently fetches live data from third-party APIs.
 - **NextAuth & Google Cloud Authentication**: Secure user authentication using Google.
 - **Cypress**: End-to-end testing for maintaining a bug-free application.
-- **ESLint + Prettier + Husky**: Ensures clean, consistent, and maintainable code.
+- **ESLint + Prettier**: Ensures clean, consistent, and maintainable code.
 - **React-Toastify**: Displays intuitive notifications to enhance user interaction.
 
 ## API Integrations
