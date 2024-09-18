@@ -15,7 +15,6 @@ const Modal = ({
 	children: React.ReactNode
 }>) => {
 	const { results } = UseProfile()
-	console.log(results)
 
 	return (
 		<Dialog>

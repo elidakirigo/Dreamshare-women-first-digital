@@ -132,22 +132,22 @@ export default function Home() {
 						<h2 className='text-center font-bold md:text-start'>Company</h2>
 						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-extralight text-gray-800 md:block'>
 							<li>
-								<Link href={'/'}>About</Link>
+								<Link href={'/About'}>About</Link>
 							</li>
 							<li>
-								<Link href={'/'}>Contact</Link>
+								<Link href={'/Contact'}>Contact</Link>
 							</li>
 							<li>
-								<Link href={'/'}>Press</Link>
+								<Link href={'/Press'}>Press</Link>
 							</li>
 							<li>
-								<Link href={'/'}>Blog</Link>
+								<Link href={'/Blog'}>Blog</Link>
 							</li>
 							<li>
-								<Link href={'/'}>Terms and Privacy</Link>
+								<Link href={'/Terms&Conditions'}>Terms and Privacy</Link>
 							</li>
 							<li>
-								<Link href={'/'}>Help</Link>
+								<Link href={'/Help'}>Help</Link>
 							</li>
 						</ul>
 					</section>
