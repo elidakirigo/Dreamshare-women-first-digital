@@ -12,22 +12,22 @@ https://www.youtube.com/results?search_query=How+to+Send+Encrypted+Email+-+What+
 
 used
 
--  shadcn-ui (Radix-ui) components library
--  tailwind css
--  axios
--  Reactjs with nextjs
--  nextAuth
--  google cloud Authentication
--  cypress
--  Eslint + prettier + husky
--  github action
--  react-toastify
+- shadcn-ui (Radix-ui) components library
+- tailwind css
+- axios
+- Reactjs with nextjs
+- nextAuth
+- google cloud Authentication
+- cypress
+- Eslint + prettier + husky
+- github action
+- react-toastify
 
 chore(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0 feature(Button) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0 CI/CD(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0 fix(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0 Test(dependencies) : Upgrade LifeCycleProcess 2.7.0 -> 2.8.0 ,style (e.g using prettier,linters),build ,
 
 semantics - https://www.w3schools.com/html/html5_semantic_elements.asp
 
--  add aria on images for the disabled, keyboard usage - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+- add aria on images for the disabled, keyboard usage - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
 
 https://web.dev/learn/accessibility/aria-html/
 

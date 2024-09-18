@@ -1,6 +1,6 @@
-'use client'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+"use client";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 /**
  * Fetch user data from api returning one user
@@ -8,17 +8,19 @@ import { useEffect, useState } from 'react'
  */
 
 export const UseProfile = () => {
-	const [profile, setProfile] = useState<{ results:[] }>({ results: [] })
-	// const dispatch = useDispatch();
+  const [profile, setProfile] = useState<{ results: [] }>({ results: [] });
+  // const dispatch = useDispatch();
 
-	useEffect(() => {
-		const fetchUser = async () => {
-			const { data: profile } = await axios.get(`${process.env.NEXT_PUBLIC_RANDOM_PROFILE}`)
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data: profile } = await axios.get(
+        `${process.env.NEXT_PUBLIC_RANDOM_PROFILE}`,
+      );
 
-			setProfile(profile)
-		}
-		fetchUser()
-	}, [])
+      setProfile(profile);
+    };
+    fetchUser();
+  }, []);
 
-	return profile
-}
+  return profile;
+};
