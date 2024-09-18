@@ -6,6 +6,7 @@ import StoreProvider from '@/components/StoreProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
 import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const inter = Inter({ subsets: ['latin'] })
 const montserrat = Montserrat({ weight: ['100', '500'], subsets: ['latin'] })
