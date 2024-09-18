@@ -92,8 +92,7 @@ export default function Home() {
 						return <StepImage key={id} ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
 					})}
 
-					{/* <StepImage ImageUrl='/assets/formatted/mesut.webp' step='2' title='Morbi velit risus' description='Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.' />
-					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' /> */}
+					
 				</div>
 				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#ff4e50] hover:text-white md:w-auto' onClick={Counter} size='sm'>
 					Read More

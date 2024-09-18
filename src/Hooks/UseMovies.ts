@@ -37,7 +37,7 @@ export const UsefetchMovies = () => {
       
 			const { data: movie } = await 
 			// toast.promise(
-				axios.get(`${process.env.NEXT_PUBLIC_MOVIES_URL}${requests.fetchingTrending}`)
+				axios.get(`${process.env.NEXT_PUBLIC_MOVIES_URL}${requests.fetchingTrending}`);
 			// 	,{
 			// 		pending: 'loading movies ',
 			// 		success: 'movies loaded successfully',

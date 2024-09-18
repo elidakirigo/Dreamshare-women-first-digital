@@ -20,7 +20,7 @@ const StepImage = ({ ImageUrl, vote, title, description }: ImageProps) => {
           sizes="(max-height: 400px) 100%, (min-height: 320px)"
         />
       </AspectRatio>
-      <div className="absolute left-0 top-0  w-full h-full bg-zinc-900/20 opacity-100 duration-500 p-6 text-white flex flex-col items-start justify-end gap-10 md:gap-6 rounded">
+      <div className="absolute left-0 top-0  w-full h-full bg-zinc-900/20 opacity-100 duration-500 p-6 text-white flex flex-col items-start justify-end gap-4 md:gap-10 rounded">
         <span className="bg-[#FF4E50] rounded-3xl px-2 py-1 font-light text-sm">
           vote: {vote} / 10
         </span>
