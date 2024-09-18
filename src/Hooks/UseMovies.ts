@@ -1,6 +1,6 @@
 'use client'
 import axios from 'axios'
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 /**
  * requests done to IMDB
@@ -29,7 +29,7 @@ const UsefetchMovies = () => {
 	const [movies, setMovies] = useState<{ results: [] }>({ results: [] })
 	// const dispatch = useDispatch()
 
-	useMemo(() => {
+	useEffect(() => {
 		const fetchMovies = async () => {
 			// const UseMoviesInstance = () => axios.create({ baseURL: process.env.NEXT_MOVIES_URL })
 			const { data } = await axios.get('https://api.themoviedb.org/3/trending/all/week?api_key=08a54f16e86e6344d3964b95ed863abf&language=en-US')

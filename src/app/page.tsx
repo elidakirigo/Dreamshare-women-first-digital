@@ -8,6 +8,7 @@ import Link from 'next/link'
 import HolidayImages from '@/components/HolidayImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
 import { useState } from 'react'
+import Modal from '@/components/Modal'
 
 export default function Home() {
 	const [count, setCount] = useState(3)
@@ -18,6 +19,8 @@ export default function Home() {
 	const Counter = () => {
 		if (count < 20) setCount(count + 3)
 	}
+
+	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
@@ -49,9 +52,11 @@ export default function Home() {
 							HOLIDAY DREAM
 						</h1>
 						<p className='max-w-68 mx-auto text-xl font-extralight md:w-full'>And find the perfect partner to fullfill it</p>
-						<Button variant='ghost' className='mt-6 rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
-							Find your holiday partner
-						</Button>
+						<Modal>
+							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
+								Find your holiday partner
+							</Button>
+						</Modal>
 					</div>
 				</div>
 			</header>
@@ -60,9 +65,10 @@ export default function Home() {
 			<section className='w-full max-w-[1100px] px-3 py-12 text-center'>
 				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
 				<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
-					{results.slice(0, count).map(({vote_average,backdrop_path, id }) => (
-						<StepImage key={id} ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' />
-					))}
+					{results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }) => {
+						const shortDescription = Trancate(overview, 100)
+						return <StepImage key={id} ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
+					})}
 
 					{/* <StepImage ImageUrl='/assets/formatted/mesut.webp' step='2' title='Morbi velit risus' description='Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.' />
 					<StepImage ImageUrl='/assets/formatted/mor-shani.webp' step='3' title='Sed leo enim, condimentum' description='Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.' /> */}
@@ -74,16 +80,18 @@ export default function Home() {
 
 			{/* holiday section */}
 			<section className='px-3 py-6 text-center'>
-				<h2 className='text-center text-2xl font-bold'>Meet a partner for your best holiday</h2>
+				<h2 className='text-center text-2xl font-bold'>Most Popular Celebs</h2>
 				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:max-w-[1100px] md:grid-cols-2 lg:grid-cols-4'>
 					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#FF4E50' />
 					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
 				</div>
-				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white md:w-auto' size='sm'>
-					See other partners
-				</Button>
+				<Modal>
+					<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white md:w-auto' size='sm'>
+						See other partners
+					</Button>
+				</Modal>
 			</section>
 
 			{/* holiday ideas section */}
@@ -106,9 +114,12 @@ export default function Home() {
 				<p className='my-6 text-center font-light'>Hi! What are your holiday interests?</p>
 				<div className='flex flex-col items-center justify-center md:flex-row'>
 					<input className='text-md w-full rounded-md border p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' />
-					<Button variant='ghost' className='m-6 w-full rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-[#FF4E50] hover:bg-white hover:text-[#FF4E50] md:max-w-[200px]' size='sm'>
-						Search partners
-					</Button>
+
+					<Modal>
+						<Button variant='ghost' className='m-6 w-full rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-[#FF4E50] hover:bg-white hover:text-[#FF4E50] md:max-w-[200px]' size='sm'>
+							Search partners
+						</Button>
+					</Modal>
 				</div>
 			</section>
 
