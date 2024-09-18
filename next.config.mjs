@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	images: ['image.tmdb.org'],
+	images: {
+		unoptimized: true,
+	},
 }
 
 export default nextConfig;
