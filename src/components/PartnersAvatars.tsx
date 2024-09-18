@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { UseProfile } from '@/Hooks/UseProfile'
 import Image from 'next/image'
 
 type PartnerProps = {
@@ -8,11 +9,16 @@ type PartnerProps = {
 	background: string
 }
 const PartnersAvatars = ({ name, location, svg, background }: PartnerProps) => {
+	const { results } = UseProfile()
+
 	return (
 		<div className='flex flex-col items-center justify-center'>
 			<div className='relative mt-4'>
 				<Avatar className='h-auto w-[9rem] shadow-md'>
-					<AvatarImage alt='' src='https://github.com/shadcn.png' />
+					{results.map(({ picture }: { picture: { large: string } }, i) => (
+						<AvatarImage key={i} alt='' src={picture.large} />
+					))}
+
 					<AvatarFallback className='text-lg dark:bg-white dark:text-black' delayMs={1000}>
 						{name
 							?.split(' ')

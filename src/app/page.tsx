@@ -6,17 +6,13 @@ import StepImage from '@/components/StepImage'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import Link from 'next/link'
 import HolidayImages from '@/components/HolidayImage'
-import { UsefetchMovies } from '@/Hooks/UseMovies'
 
 export default function Home() {
-	const u = UsefetchMovies()
-	console.log('p', u)
-
 	return (
 		<main className='flex flex-col items-center justify-center'>
 			<header className='relative h-full min-h-[30rem] w-full'>
 				{/* <AspectRatio ratio={16 / 9}> */}
-				<Image src='/assets/formatted/party-bg.webp' alt='' className='min-h-[30rem] object-cover' fill={true} />
+				<Image src='/assets/formatted/party-bg.webp' alt='' className='min-h-[30rem] object-cover' fill={true} priority={true} />
 				{/* </AspectRatio> */}
 
 				{/* homepage description and call to action */}
@@ -67,7 +63,7 @@ export default function Home() {
 					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
-				</div>
+				</div>            
 				<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white md:w-auto' size='sm'>
 					See other partners
 				</Button>
@@ -133,7 +129,7 @@ export default function Home() {
 					</section>
 					<section>
 						<span className='block text-center text-xs font-bold text-gray-500'>DESIGNED BY</span>
-						<Image src='/ARETO.svg' alt='' width={100} height={0} className='h-auto py-4' />
+						<Image src='/ARETO.svg' alt='' width={100} height={0} className='h-auto py-4' style={{ height: 'auto' }} />
 					</section>
 				</div>
 			</footer>

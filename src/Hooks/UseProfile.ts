@@ -1,7 +1,6 @@
 'use client'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { usefetchuser } from '../../../github/N---Z/Savvannah-app/client/Hooks/useUser';
+import { useMemo, useState } from 'react'
 
 /**
  * Fetch user data from api returning one user
@@ -9,16 +8,13 @@ import { usefetchuser } from '../../../github/N---Z/Savvannah-app/client/Hooks/u
  */
 
 export const UseProfile = () => {
-	const [profile, setProfile] = useState('')
+	const [profile, setProfile] = useState<{ results: [] }>({ results: [] })
 	// const dispatch = useDispatch();
 
-	useEffect(() => {
+	useMemo(() => {
 		const fetchUser = async () => {
+			const { data: profile } = await axios.get(`${process.env.NEXT_PUBLIC_RANDOM_PROFILE}`)
 
-			const { data: profile } = await axios.get(process.env.NEXT_PUBLIC_RANDOM_PROFILE as string)
-
-			console.log(profile);
-			
 			setProfile(profile)
 		}
 		fetchUser()
@@ -26,13 +22,3 @@ export const UseProfile = () => {
 
 	return profile
 }
-
-export const UseFetchData = async() => {
-	const {results} =  UseProfile()
-
-	return  results.map((person: { name: { first: string; last: string }; picture: { large: string } }) => ({
-		name: `${person.name.first} ${person.name.last}`,
-		picture: person.picture.large,
-	}))
-}
-
