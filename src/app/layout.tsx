@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
+import { SessionProvider } from '@/components/SessionProvider'
+import StoreProvider from '@/components/StoreProvider'
+
 
 const inter = Inter({ subsets: ['latin'] })
 const montserrat = Montserrat({ weight: ['100', '500'], subsets: ['latin'] })
@@ -18,7 +21,8 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<link rel='icon' href='/favicon.svg' sizes='any' />
-			<body className={montserrat.className}>{children}</body>
+			<body className={montserrat.className}><SessionProvider session={session}><StoreProvider>{children}</StoreProvider></SessionProvider></body>
+			
 		</html>
 	)
 }
