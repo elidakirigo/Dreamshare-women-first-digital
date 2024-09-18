@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
  */
 
 export const UseProfile = () => {
-	const [profile, setProfile] = useState<{ results: [] }>({ results: [] })
+	const [profile, setProfile] = useState<{ results:[] }>({ results: [] })
 	// const dispatch = useDispatch();
 
 	useEffect(() => {

@@ -14,7 +14,6 @@ export default function Home() {
 	const [count, setCount] = useState(3)
 
 	const { results } = UsefetchMovies()
-	console.log(results)
 
 	const Counter = () => {
 		if (count < 20) setCount(count + 3)
