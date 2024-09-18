@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint", 
+    "open": "cypress open",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^1.1.0",

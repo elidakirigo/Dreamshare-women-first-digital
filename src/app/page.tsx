@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { signIn } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import StepImage from '@/components/StepImage'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import Link from 'next/link'
@@ -9,10 +9,12 @@ import HolidayImages from '@/components/HolidayImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
 import { useState } from 'react'
 import Modal from '@/components/Modal'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export default function Home() {
 	const [count, setCount] = useState(3)
 
+	const { data: session } = useSession()
 	const { results } = UsefetchMovies()
 
 	const Counter = () => {
@@ -34,12 +36,33 @@ export default function Home() {
 					<nav className='flex w-full max-w-[1100px] items-center justify-center md:justify-between'>
 						<h1 className='hidden font-bold text-white md:block'>DREAMSHARE</h1>
 						<div>
-							<Button variant='link' size='sm' className='text-white' onClick={() => signIn('google')}>
-								Login
-							</Button>
-							<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
-								SignUp
-							</Button>
+							{session ? (
+								<div className='flex gap-4 items-center justify-center'>
+									<h1 className='text-white border border-white px-2 py-1 rounded-lg'>{session.user?.name} </h1>
+									<Avatar className='h-auto w-9 shadow-md border-2 border-black'>
+										<AvatarImage src={session?.user?.image as string} />
+										<AvatarFallback className='text-lg dark:bg-white dark:text-black' delayMs={1000}>
+											{session.user
+												?.name!.split(' ')
+												.map((n) => n[0])
+												.join('')
+												.toUpperCase()}
+										</AvatarFallback>
+									</Avatar>
+									<Button onClick={() => signOut()} variant='ghost' size='sm' className='text-white'>
+										signOut
+									</Button>
+								</div>
+							) : (
+								<>
+									<Button variant='link' size='sm' className='text-white' onClick={() => signIn('google')}>
+										Login
+									</Button>
+									<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
+										SignUp
+									</Button>
+								</>
+							)}
 						</div>
 					</nav>
 
