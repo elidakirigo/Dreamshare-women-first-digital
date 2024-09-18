@@ -35,25 +35,26 @@ export const UsefetchMovies = () => {
 			// const UseMoviesInstance = () => axios.create({ baseURL: process.env.NEXT_MOVIES_URL })
 		
       
-			const { data: movie } = await toast.promise(
-				axios.get(`${process.env.NEXT_PUBLIC_MOVIES_URL}${requests.fetchingTrending}`),
-				{
-					pending: 'loading movies ',
-					success: 'movies loaded successfully',
-					error: 'No movie found ',
-				},
-				{
-					position: 'top-center',
-					autoClose: 3000,
-					hideProgressBar: false,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-					progress: undefined,
-					theme: 'light',
-					transition: Bounce,
-				},
-			)
+			const { data: movie } = await 
+			// toast.promise(
+				axios.get(`${process.env.NEXT_PUBLIC_MOVIES_URL}${requests.fetchingTrending}`)
+			// 	,{
+			// 		pending: 'loading movies ',
+			// 		success: 'movies loaded successfully',
+			// 		error: 'No movie found ',
+			// 	},
+			// 	{
+			// 		position: 'top-center',
+			// 		autoClose: 3000,
+			// 		hideProgressBar: false,
+			// 		closeOnClick: true,
+			// 		pauseOnHover: true,
+			// 		draggable: true,
+			// 		progress: undefined,
+			// 		theme: 'light',
+			// 		transition: Bounce,
+			// 	},
+			// )
 
 			// const data = await axios.get(`${process.env.NEXT_MOVIES_URL}${requests.fetchingTrending}`)
 
