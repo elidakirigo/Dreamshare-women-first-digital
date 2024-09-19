@@ -89,10 +89,12 @@ export default function Home() {
 				<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
 					{results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }) => {
 						const shortDescription = Trancate(overview, 100)
-						return <StepImage key={id} ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
+						return (
+							<div key={id} className='relative w-full min-h-80 md:min-h-[400px]'>
+								<StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
+							</div>
+						)
 					})}
-
-					
 				</div>
 				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#ff4e50] hover:text-white md:w-auto' onClick={Counter} size='sm'>
 					Read More
