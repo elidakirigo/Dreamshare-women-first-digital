@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter, Montserrat } from 'next/font/google' 
+import { Inter, Montserrat } from 'next/font/google'
 import { SessionProvider } from '@/components/SessionProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
-import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 
@@ -26,10 +25,7 @@ export default async function RootLayout({
 		<html lang='en'>
 			<link rel='icon' href='/favicon.svg' sizes='any' />
 			<body className={montserrat.className}>
-				<SessionProvider session={session}>
-					{children}
-					<ToastContainer />
-				</SessionProvider>
+				<SessionProvider session={session}>{children}</SessionProvider>
 			</body>
 		</html>
 	)

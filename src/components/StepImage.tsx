@@ -10,7 +10,7 @@ type ImageProps = {
 
 const StepImage = ({ ImageUrl, vote, title, description }: ImageProps) => {
 	return (
-		<>
+		< >
 			<AspectRatio ratio={16 / 9}>
 				<Image src={ImageUrl} alt='' className='shadow-lg rounded-md  object-cover  min-h-80 md:min-h-[400px]' fill={true} sizes='(max-width: 768px) 50%, 50%' />
 			</AspectRatio>

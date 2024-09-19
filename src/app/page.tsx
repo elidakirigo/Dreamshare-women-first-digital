@@ -4,31 +4,22 @@ import Image from 'next/image'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import HolidayImages from '@/components/HolidayImage'
-import { UsefetchMovies } from '@/Hooks/UseMovies'
-import { Suspense, useState } from 'react'
+import { useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
+import StepImage from '@/components/StepImage'
+import { UsefetchMovies } from '@/Hooks/UseMovies'
 import Loading from '@/components/Loading'
 
-const MovieCard = ({ count }: { count: number }) => {
-	const { results } = UsefetchMovies()
-
-	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
-	
-	return (
-		<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
-			{results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }) => {
-				const shortDescription = Trancate(overview, 100)
-				return (
-					<div key={id} className='relative w-full min-h-80 md:min-h-[400px]'>
-						{/* <StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} /> */}
-					</div>
-				)
-			})}
-		</div>
-	)
+type MovieResults = {
+	vote_average: number
+	backdrop_path: string
+	id: number
+	overview: string
+	original_title: string
+	name: string
 }
-
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
@@ -36,9 +27,14 @@ export default function Home() {
 
 	const [count, setCount] = useState(3)
 
+	const { results } = UsefetchMovies()
+
+	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
+
 	const Counter = () => {
 		if (count < 20) setCount(count + 3)
 	}
+	console.log(results)
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
@@ -105,11 +101,22 @@ export default function Home() {
 
 			{/* How it works section / most trending movies */}
 			<section className='w-full max-w-[1100px] px-3 py-12 text-center'>
-				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
+				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2> 
+				<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
+					{results.length >0 ? (
+						results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }: MovieResults) => {
+							const shortDescription = Trancate(overview, 100)
 
-				<Suspense fallback={<Loading />}>
-					<MovieCard count={count} />
-				</Suspense>
+							return (
+								<div key={id} className='relative w-full min-h-80 md:min-h-[400px]'>
+									<StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
+								</div>
+							)
+						})
+					) : (
+						<Loading />
+					)}
+				</div>
 
 				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' onClick={Counter} size='sm'>
 					Read More
@@ -170,7 +177,7 @@ export default function Home() {
 					<section>
 						<h2 className='text-center font-bold md:text-start'>Company</h2>
 						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-normal text-gray-600 md:block'>
-							{/* <li>
+							<li>
 								<Link href={'/About'}>About</Link>
 							</li>
 							<li>
@@ -187,7 +194,7 @@ export default function Home() {
 							</li>
 							<li>
 								<Link href={'/Help'}>Help</Link>
-							</li> */}
+							</li>
 						</ul>
 					</section>
 					<section>
