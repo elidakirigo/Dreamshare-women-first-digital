@@ -75,7 +75,7 @@ export default function Home() {
 						</h1>
 						<p className='max-w-68 mx-auto text-xl font-extralight md:w-full'>And find the perfect partner to fullfill it</p>
 						<Modal>
-							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
+							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#661F20] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 								Find your holiday partner
 							</Button>
 						</Modal>
@@ -96,7 +96,7 @@ export default function Home() {
 						)
 					})}
 				</div>
-				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#ff4e50] hover:text-white md:w-auto' onClick={Counter} size='sm'>
+				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' onClick={Counter} size='sm'>
 					Read More
 				</Button>
 			</section>
@@ -105,13 +105,13 @@ export default function Home() {
 			<section className='px-3 py-6 text-center'>
 				<h2 className='text-center text-2xl font-bold'>Most Popular Celebs</h2>
 				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:max-w-[1100px] md:grid-cols-2 lg:grid-cols-4'>
-					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#FF4E50' />
+					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#661F20' />
 					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
 				</div>
 				<Modal>
-					<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#FF4E50] bg-transparent text-[#FF4E50] hover:bg-[#FF4E50] hover:text-white md:w-auto' size='sm'>
+					<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' size='sm'>
 						See other partners
 					</Button>
 				</Modal>
@@ -139,7 +139,7 @@ export default function Home() {
 					<input className='text-md w-full rounded-md border p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' />
 
 					<Modal>
-						<Button variant='ghost' className='m-6 w-full rounded-3xl bg-[#FF4E50] text-white hover:border hover:border-[#FF4E50] hover:bg-white hover:text-[#FF4E50] md:max-w-[200px]' size='sm'>
+						<Button variant='ghost' className='m-6 w-full rounded-3xl bg-[#661F20] text-white hover:border hover:border-[#661F20] hover:bg-white hover:text-[#661F20] md:max-w-[200px]' size='sm'>
 							Search partners
 						</Button>
 					</Modal>
@@ -147,10 +147,10 @@ export default function Home() {
 			</section>
 
 			{/* page footer */}
-			<footer className='mt-4 flex w-full flex-col items-center border-t-2 border-[#FF4E50] p-4'>
+			<footer className='mt-4 flex w-full flex-col items-center border-t-2 border-[#661F20] p-4'>
 				<div className='flex w-full max-w-[1100px] flex-col items-center justify-center gap-6 md:flex-row md:items-start md:justify-between md:pt-8'>
 					<section>
-						<h1 className='text-[#FF4E50]'>DREAMSHARE</h1>
+						<h1 className='text-[#661F20]'>DREAMSHARE</h1>
 					</section>
 					<section>
 						<h2 className='text-center font-bold md:text-start'>Company</h2>
