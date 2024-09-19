@@ -12,7 +12,7 @@ const StepImage = ({ ImageUrl, vote, title, description }: ImageProps) => {
 	return (
 		<>
 			<AspectRatio ratio={16 / 9}>
-				<Image src={ImageUrl} alt='' className='shadow-lg rounded-md  object-cover  min-h-80 md:min-h-[400px]' fill={true} sizes='(max-width: 768px) 50%, 100%' />
+				<Image src={ImageUrl} alt='' className='shadow-lg rounded-md  object-cover  min-h-80 md:min-h-[400px]' fill={true} sizes='(max-width: 768px) 50%, 80%' />
 			</AspectRatio>
 			<div className='absolute left-0 top-0  w-full h-full bg-zinc-900/20 opacity-100 duration-500 p-6 text-white flex flex-col items-start justify-end gap-4 md:gap-10 rounded'>
 				<span className='bg-[#661F20] rounded-3xl px-2 py-1 font-normal text-sm'>vote: {vote} / 10</span>
