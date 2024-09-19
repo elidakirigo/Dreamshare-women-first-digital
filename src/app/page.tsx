@@ -123,10 +123,10 @@ export default function Home() {
 				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:grid-cols-3'>
 					<HolidayImages ImageUrl='folco' title='Sports and Activities' span={1} />
 					<HolidayImages ImageUrl='food-bowl' title='Wellness and Health' span={1} />
-					<HolidayImages ImageUrl='mesut' title='Extreme Sports and Expeditions' span={1} />
+					<HolidayImages ImageUrl='reduced/mesut' title='Extreme Sports and Expeditions' span={1} />
 					<HolidayImages ImageUrl='oppo' title='Games' span={1} />
 					<HolidayImages ImageUrl='culture' title='Culture and Education' span={2} />
-					<HolidayImages ImageUrl='mor-shani' title='Enjomet and Relaxation' span={2} />
+					<HolidayImages ImageUrl='reduced/mor-shani' title='Enjomet and Relaxation' span={2} />
 					<HolidayImages ImageUrl='sunshine' title='Trevelling' span={1} />
 				</div>
 			</section>
