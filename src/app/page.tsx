@@ -134,7 +134,7 @@ export default function Home() {
 			{/* Create holiday activities section */}
 			<section className='w-full px-3 py-6 md:max-w-[600px]'>
 				<h2 className='text-center text-2xl font-bold'>Create your holiday activity</h2>
-				<p className='my-6 text-center font-light'>Hi! What are your holiday interests?</p>
+				<p className='my-6 text-center font-normal'>Hi! What are your holiday interests?</p>
 				<div className='flex flex-col items-center justify-center md:flex-row'>
 					<input className='text-md w-full rounded-md border p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' />
 
