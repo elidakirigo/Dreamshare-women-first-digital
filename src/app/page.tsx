@@ -8,8 +8,7 @@ import PartnersAvatars from '@/components/PartnersAvatars'
 import Link from 'next/link'
 import HolidayImages from '@/components/HolidayImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
-import { useState } from 'react'
-import DynamicModal from '@/components/DynamicModal'
+import { useState } from 'react' 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import dynamic from 'next/dynamic'
 
@@ -26,7 +25,7 @@ export default function Home() {
 
 	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
 
-	const DynamicDynamicModal = dynamic(() => import('@/components/DynamicModal'), { ssr: false })
+	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
