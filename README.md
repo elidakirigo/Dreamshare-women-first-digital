@@ -55,7 +55,6 @@ Edit the `.env` file to include API keys and authentication credentials.
 NEXT_PUBLIC_GOOGLE_CLIENT_ID=your-google-client-id
 NEXT_PUBLIC_GOOGLE_CLIENT_SECRET=your-google-client-secret
 NEXT_PUBLIC_TMDB_API_KEY=your-tmdb-api-key 
-NEXT_PUBLIC_MOVIE_API_KEY=your-tmdb-api-key
 ```
 
 ### 4. Run the Application
