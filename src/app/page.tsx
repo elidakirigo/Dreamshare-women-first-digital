@@ -9,7 +9,7 @@ import Link from 'next/link'
 import HolidayImages from '@/components/HolidayImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
 import { useState } from 'react'
-import Modal from '@/components/Modal'
+import DynamicModal from '@/components/DynamicModal'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import dynamic from 'next/dynamic'
 
@@ -26,7 +26,7 @@ export default function Home() {
 
 	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
 
-	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
+	const DynamicDynamicModal = dynamic(() => import('@/components/DynamicModal'), { ssr: false })
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
@@ -80,11 +80,11 @@ export default function Home() {
 							HOLIDAY DREAM
 						</h1>
 						<p className='max-w-68 mx-auto text-xl font-extralight md:w-full'>And find the perfect partner to fullfill it</p>
-						<DynamicModal>
+						<DynamicDynamicModal>
 							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#661F20] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 								Find your holiday partner
 							</Button>
-						</DynamicModal>
+						</DynamicDynamicModal>
 					</div>
 				</div>
 			</header>
@@ -116,11 +116,11 @@ export default function Home() {
 					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
 					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
 				</div>
-				<Modal>
+				<DynamicModal>
 					<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' size='sm'>
 						See other partners
 					</Button>
-				</Modal>
+				</DynamicModal>
 			</section>
 
 			{/* holiday ideas section */}
@@ -144,11 +144,11 @@ export default function Home() {
 				<div className='flex flex-col items-center justify-center md:flex-row'>
 					<input className='text-md w-full rounded-md border p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' />
 
-					<Modal>
+					<DynamicModal>
 						<Button variant='ghost' className='m-6 w-full rounded-3xl bg-[#661F20] text-white hover:border hover:border-[#661F20] hover:bg-white hover:text-[#661F20] md:max-w-[200px]' size='sm'>
 							Search partners
 						</Button>
-					</Modal>
+					</DynamicModal>
 				</div>
 			</section>
 
