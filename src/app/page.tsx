@@ -31,7 +31,7 @@ export default function Home() {
 			<header className='relative h-full min-h-[30rem] w-full'>
 				{/* <AspectRatio ratio={16 / 9}> */}
 
-				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 80%' />
+				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' />
 				{/* </AspectRatio> */}
 
 				{/* homepage description and call to action */}
