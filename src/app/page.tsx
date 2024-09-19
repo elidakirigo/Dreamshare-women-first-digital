@@ -11,7 +11,7 @@ import { UsefetchMovies } from '@/Hooks/UseMovies'
 import { useState } from 'react'
 import Modal from '@/components/Modal'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import Dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic'
 
 
 export default function Home() {
@@ -25,6 +25,8 @@ export default function Home() {
 	}
 
 	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
+
+	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
@@ -78,11 +80,11 @@ export default function Home() {
 							HOLIDAY DREAM
 						</h1>
 						<p className='max-w-68 mx-auto text-xl font-extralight md:w-full'>And find the perfect partner to fullfill it</p>
-						<Modal>
+						<DynamicModal>
 							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#661F20] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 								Find your holiday partner
 							</Button>
-						</Modal>
+						</DynamicModal>
 					</div>
 				</div>
 			</header>
