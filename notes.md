@@ -72,3 +72,5 @@ https://blog.logrocket.com/improving-performance-html-responsive-images/
 https://www.npmjs.com/package/sharp
 
 const axios = (await import('axios')).default
+
+npm install depcheck

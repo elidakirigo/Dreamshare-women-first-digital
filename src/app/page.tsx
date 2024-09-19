@@ -1,19 +1,17 @@
 'use client'
-
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { signIn, signOut, useSession } from 'next-auth/react'
-import StepImage from '@/components/StepImage'
 import PartnersAvatars from '@/components/PartnersAvatars'
-import Link from 'next/link'
 import HolidayImages from '@/components/HolidayImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
-import { useState } from 'react' 
+import { useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import dynamic from 'next/dynamic'
 
-
 export default function Home() {
+	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
+
 	const [count, setCount] = useState(3)
 
 	const { data: session } = useSession()
@@ -24,8 +22,6 @@ export default function Home() {
 	}
 
 	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
-
-	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
@@ -73,7 +69,9 @@ export default function Home() {
 
 					{/* page call to to action */}
 					<div className='mt-16 text-center text-white'>
-						<span className='font-bold md:hidden'>DREAMSHARE</span>
+						<div className='h-6'>
+							<span className='font-bold md:hidden'>DREAMSHARE</span>
+						</div>
 						<h1 className='my-6 text-3xl font-bold md:text-5xl'>
 							SHARE YOUR <br />
 							HOLIDAY DREAM
