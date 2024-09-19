@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter, Montserrat } from 'next/font/google'
-import './globals.css'
+import { Inter, Montserrat } from 'next/font/google' 
 import { SessionProvider } from '@/components/SessionProvider'
-import StoreProvider from '@/components/StoreProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 const montserrat = Montserrat({ weight: ['100', '500'], subsets: ['latin'] })
@@ -28,10 +27,8 @@ export default async function RootLayout({
 			<link rel='icon' href='/favicon.svg' sizes='any' />
 			<body className={montserrat.className}>
 				<SessionProvider session={session}>
-					<StoreProvider>
-						{children} 
-            <ToastContainer />
-					</StoreProvider>
+					{children}
+					<ToastContainer />
 				</SessionProvider>
 			</body>
 		</html>

@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+import withBundleAnalyzer from '@next/bundle-analyzer'
+
 const nextConfig = {
 	images: {
 		// unoptimized: true,
@@ -18,4 +21,8 @@ const nextConfig = {
 	},
 }
 
-export default nextConfig
+const NewBundle = withBundleAnalyzer({
+	enabled: process.env.ANALYZE === 'true',
+})
+
+export default NewBundle(nextConfig)
