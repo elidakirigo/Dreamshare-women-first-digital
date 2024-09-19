@@ -1,10 +1,10 @@
+import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { SessionProvider } from '@/components/SessionProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
-import 'react-toastify/dist/ReactToastify.css'
-import './globals.css'
+
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 const montserrat = Montserrat({ weight: ['100', '500'], subsets: ['latin'] })

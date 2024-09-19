@@ -102,9 +102,10 @@ export default function Home() {
 			{/* How it works section / most trending movies */}
 			<section className='w-full max-w-[1100px] px-3 py-12 text-center'>
 				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
-				<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
-					{results.length > 0 ? (
-						results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }: MovieResults) => {
+
+				{results.length > 0 ? (
+					<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
+						{results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }: MovieResults) => {
 							const shortDescription = Trancate(overview, 100)
 
 							return (
@@ -112,11 +113,11 @@ export default function Home() {
 									<StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
 								</div>
 							)
-						})
-					) : (
-						<Loading />
-					)}
-				</div>
+						})}
+					</div>
+				) : (
+					<Loading />
+				)}
 
 				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' onClick={Counter} size='sm'>
 					Read More
