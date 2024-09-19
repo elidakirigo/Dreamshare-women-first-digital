@@ -154,7 +154,7 @@ export default function Home() {
 					</section>
 					<section>
 						<h2 className='text-center font-bold md:text-start'>Company</h2>
-						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-extralight text-gray-800 md:block'>
+						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-normal text-gray-600 md:block'>
 							<li>
 								<Link href={'/About'}>About</Link>
 							</li>
@@ -179,7 +179,7 @@ export default function Home() {
 						<h2 className='font-bold'>Partners</h2>
 					</section>
 					<section>
-						<span className='block text-center text-xs font-bold text-gray-500'>DESIGNED BY</span>
+						<span className='block text-center text-xs font-bold text-gray-600'>DESIGNED BY</span>
 						<Image src='/ARETO.svg' alt='footer logo' width={100} height={0} className='h-auto py-4' style={{ height: 'auto' }} />
 					</section>
 				</div>
