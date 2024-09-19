@@ -5,7 +5,6 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
 import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
-import Head from 'next/head'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] })
