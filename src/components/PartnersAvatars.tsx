@@ -16,7 +16,7 @@ const PartnersAvatars = ({ name, location, svg, background }: PartnerProps) => {
       <div className="relative mt-4">
         <Avatar className="h-[9rem] w-[9rem] rounded-full shadow-md">
           {results.map(({ picture }: { picture: { large: string } }, i) => (
-            <AvatarImage key={i} alt="" src={picture.large || '/assets/formatted/user-profile.webp'} />
+            <AvatarImage key={i} alt="user avatars" src={picture.large || '/assets/formatted/user-profile.webp'} />
           ))}
 
           <AvatarFallback

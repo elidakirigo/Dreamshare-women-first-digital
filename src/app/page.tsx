@@ -27,7 +27,7 @@ export default function Home() {
 		<main className='flex flex-col items-center justify-center'>
 			<header className='relative h-full min-h-[30rem] w-full'>
 				{/* <AspectRatio ratio={16 / 9}> */}
-				<Image src='/assets/formatted/party-bg.webp' alt='' className='min-h-[30rem] object-cover' fill={true} priority={true} />
+				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} />
 				{/* </AspectRatio> */}
 
 				{/* homepage description and call to action */}
@@ -180,7 +180,7 @@ export default function Home() {
 					</section>
 					<section>
 						<span className='block text-center text-xs font-bold text-gray-500'>DESIGNED BY</span>
-						<Image src='/ARETO.svg' alt='' width={100} height={0} className='h-auto py-4' style={{ height: 'auto' }} />
+						<Image src='/ARETO.svg' alt='footer logo' width={100} height={0} className='h-auto py-4' style={{ height: 'auto' }} />
 					</section>
 				</div>
 			</footer>
