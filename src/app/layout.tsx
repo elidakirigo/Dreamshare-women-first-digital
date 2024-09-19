@@ -29,7 +29,7 @@ export default async function RootLayout({
 			<body className={montserrat.className}>
 				<SessionProvider session={session}>
 					{children}
-					<GoogleAnalytics gaId={proccess.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+					<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string} />
 				</SessionProvider>
 
 				{/* <!-- Google tag (gtag.js) --> */}
