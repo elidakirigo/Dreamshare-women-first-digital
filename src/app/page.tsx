@@ -159,7 +159,7 @@ export default function Home() {
 					<section>
 						<h2 className='text-center font-bold md:text-start'>Company</h2>
 						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-normal text-gray-600 md:block'>
-							<li>
+							{/* <li>
 								<Link href={'/About'}>About</Link>
 							</li>
 							<li>
@@ -176,7 +176,7 @@ export default function Home() {
 							</li>
 							<li>
 								<Link href={'/Help'}>Help</Link>
-							</li>
+							</li> */}
 						</ul>
 					</section>
 					<section>
