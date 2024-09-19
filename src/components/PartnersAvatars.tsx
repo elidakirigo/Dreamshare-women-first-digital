@@ -41,7 +41,7 @@ const PartnersAvatars = ({ name, location, svg, background }: PartnerProps) => {
         )}
       </div>
       <h3 className="my-4 font-black">{name}</h3>
-      <p className="text-center font-medium text-zinc-400">{location}</p>
+      <p className="text-center font-medium text-zinc-600">{location}</p>
     </div>
   );
 };

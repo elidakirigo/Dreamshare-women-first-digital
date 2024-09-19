@@ -2,7 +2,8 @@
 const nextConfig = {
 	images: {
 		// unoptimized: true,
-		domains: ['image.tmdb.org', 'randomuser.me'],
+		// domains: ['image.tmdb.org', 'randomuser.me'],
+		remotePatterns: ['image.tmdb.org', 'randomuser.me'],
 	},
 }
 
