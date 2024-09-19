@@ -5,23 +5,40 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import HolidayImages from '@/components/HolidayImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import dynamic from 'next/dynamic'
+import Loading from '@/components/Loading'
+
+const MovieCard = ({ count }: { count: number }) => {
+	const { results } = UsefetchMovies()
+
+	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
+	
+	return (
+		<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
+			{results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }) => {
+				const shortDescription = Trancate(overview, 100)
+				return (
+					<div key={id} className='relative w-full min-h-80 md:min-h-[400px]'>
+						{/* <StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} /> */}
+					</div>
+				)
+			})}
+		</div>
+	)
+}
 
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
-	const [count, setCount] = useState(3)
-
 	const { data: session } = useSession()
-	const { results } = UsefetchMovies()
+
+	const [count, setCount] = useState(3)
 
 	const Counter = () => {
 		if (count < 20) setCount(count + 3)
 	}
-
-	const Trancate = (string: string, n: number) => (string?.length > n ? string.substr(0, n - 1) + '...' : string)
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
@@ -89,16 +106,11 @@ export default function Home() {
 			{/* How it works section / most trending movies */}
 			<section className='w-full max-w-[1100px] px-3 py-12 text-center'>
 				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
-				<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
-					{results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }) => {
-						const shortDescription = Trancate(overview, 100)
-						return (
-							<div key={id} className='relative w-full min-h-80 md:min-h-[400px]'>
-								{/* <StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} /> */}
-							</div>
-						)
-					})}
-				</div>
+
+				<Suspense fallback={<Loading />}>
+					<MovieCard count={count} />
+				</Suspense>
+
 				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' onClick={Counter} size='sm'>
 					Read More
 				</Button>
