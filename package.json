@@ -12,7 +12,7 @@
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "analyzer":"ANALYZE=true npm run build"
+    "analyzer": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^14.2.12",
@@ -23,6 +23,7 @@
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "depcheck": "^1.4.7",
     "lucide-react": "^0.439.0",
     "next": "14.2.6",
     "next-auth": "^4.24.7",

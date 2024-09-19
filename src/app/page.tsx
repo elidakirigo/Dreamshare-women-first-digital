@@ -80,11 +80,11 @@ export default function Home() {
 							HOLIDAY DREAM
 						</h1>
 						<p className='max-w-68 mx-auto text-xl font-extralight md:w-full'>And find the perfect partner to fullfill it</p>
-						<DynamicDynamicModal>
+						<DynamicModal>
 							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#661F20] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 								Find your holiday partner
 							</Button>
-						</DynamicDynamicModal>
+						</DynamicModal>
 					</div>
 				</div>
 			</header>
