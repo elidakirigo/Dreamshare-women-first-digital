@@ -16,7 +16,7 @@ DreamShare is a dynamic and responsive web application designed to enhance trave
 ## API Integrations
 
 - **The Movie Database (TMDB)**: Fetches "Most Popular Movies" for the "How Dreamshare Works?" section.
-- **Celebrity API**: Displays "Most Popular Celebrities" in the "Meet a Partner for Your Best Holiday" section.
+- **User Profile API**: Displays "Most Popular Celebrities" in the "Meet a Partner for Your Best Holiday" section.
 - **Load More Functionality**: Fetches additional movies or celebrities dynamically with a "Load More" button.
 - **Modal Interaction**: "See Other Partners" opens a modal to display other celebrity profiles.
 
@@ -26,7 +26,7 @@ DreamShare is a dynamic and responsive web application designed to enhance trave
 
 - Node.js and npm
 - Google Cloud API key (for authentication)
-- TMDB API key (for fetching movie data)
+- TMDB API key (for fetching movie data) 
 
 ### 1. Clone the Repository
 
@@ -54,7 +54,8 @@ Edit the `.env` file to include API keys and authentication credentials.
 ```bash
 NEXT_PUBLIC_GOOGLE_CLIENT_ID=your-google-client-id
 NEXT_PUBLIC_GOOGLE_CLIENT_SECRET=your-google-client-secret
-NEXT_PUBLIC_TMDB_API_KEY=your-tmdb-api-key
+NEXT_PUBLIC_TMDB_API_KEY=your-tmdb-api-key 
+NEXT_PUBLIC_MOVIE_API_KEY=your-tmdb-api-key
 ```
 
 ### 4. Run the Application

@@ -20,8 +20,7 @@ const PartnersAvatars = ({ name, location, svg, background }: PartnerProps) => {
           ))}
 
           <AvatarFallback
-            className="text-lg dark:bg-white dark:text-black"
-            delayMs={1000}
+            className="text-lg dark:bg-white dark:text-black" 
           >
             {name
               ?.split(" ")
