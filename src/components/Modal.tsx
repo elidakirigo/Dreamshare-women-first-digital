@@ -26,14 +26,14 @@ const Modal = ({
   const { results } = UseProfile();
 
   return (
-    <Dialog>
+    <Dialog >
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>More Partner Suggestions</DialogTitle>
         </DialogHeader>
-        <div className="grid grid-cols-1overflow-auto md:grid-cols-3 gap-8 ">
-          {new Array(3)
+        <div className="max-h-40  md:max-h-72 grid grid-cols-1 overflow-y-auto overflow-x-hidden md:grid-cols-2 gap-8 ">
+          {new Array(15)
             .fill([])
             .map(() =>
               results.map(({ name, location, id }: ProfileProps) => (

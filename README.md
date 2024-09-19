@@ -12,6 +12,7 @@ DreamShare is a dynamic and responsive web application designed to enhance trave
 - **Cypress**: End-to-end testing for maintaining a bug-free application.
 - **ESLint + Prettier**: Ensures clean, consistent, and maintainable code.
 - **React-Toastify**: Displays intuitive notifications to enhance user interaction.
+- **CI/CD integration**: Unit, integration, and end-to-end Cypress tests are executed.
 
 ## API Integrations
 
