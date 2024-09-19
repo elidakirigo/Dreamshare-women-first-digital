@@ -101,9 +101,9 @@ export default function Home() {
 
 			{/* How it works section / most trending movies */}
 			<section className='w-full max-w-[1100px] px-3 py-12 text-center'>
-				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2> 
+				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
 				<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
-					{results.length >0 ? (
+					{results.length > 0 ? (
 						results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }: MovieResults) => {
 							const shortDescription = Trancate(overview, 100)
 
