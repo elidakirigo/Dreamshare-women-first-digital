@@ -14,9 +14,9 @@ const PartnersAvatars = ({ name, location, svg, background }: PartnerProps) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="relative mt-4">
-        <Avatar className="h-auto w-[9rem] shadow-md">
+        <Avatar className="h-[9rem] w-[9rem] rounded-full shadow-md">
           {results.map(({ picture }: { picture: { large: string } }, i) => (
-            <AvatarImage key={i} alt="" src={picture.large} />
+            <AvatarImage key={i} alt="" src={picture.large || '/assets/formatted/user-profile.webp'} />
           ))}
 
           <AvatarFallback
