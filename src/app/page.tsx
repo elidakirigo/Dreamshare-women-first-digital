@@ -11,7 +11,6 @@ import Link from 'next/link'
 import StepImage from '@/components/StepImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
 import Loading from '@/components/Loading'
-import { Partytown } from '@builder.io/partytown/react'
 
 type MovieResults = {
 	vote_average: number
@@ -42,9 +41,7 @@ export default function Home() {
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
-			<Partytown debug={true} forward={['gtag']}>
-				<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
-			</Partytown>
+			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
 			{/* <GoogleTagManager gtmId='G-E6QC2G1KE3' /> */}
 
 			<header className='relative h-full min-h-[30rem] w-full'>
