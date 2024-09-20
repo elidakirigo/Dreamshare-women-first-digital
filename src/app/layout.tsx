@@ -11,8 +11,8 @@ import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 const montserrat = Montserrat({ weight: ['100', '500'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'Dreamshare-women-first-digital',
-	description: 'Dreamshare-women-first-digital',
+	title: 'Dreamshare - Holidays and Events',
+	description: ' Holiday, Celebrity meets and Movies',
 }
 
 export default async function RootLayout({

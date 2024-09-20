@@ -39,21 +39,20 @@ export default function Home() {
 	const Counter = () => {
 		if (count < 20) setCount(count + 3)
 	}
-	console.log(results)
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
 			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
 			{/* <GoogleTagManager gtmId='G-E6QC2G1KE3' /> */}
 
-			<header className='relative h-full min-h-[30rem] w-full'> 
+			<header className='relative h-full min-h-[30rem] w-full'>
 				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' />
 
 				{/* homepage description and call to action */}
-				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
+				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/60 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
 					{/* login buttons */}
 					<nav className='flex w-full max-w-[1100px] items-center justify-center md:justify-between'>
-						<h1 className='hidden font-bold text-white md:block'>DREAMSHARE</h1>
+						<span className='hidden font-bold text-white md:block'>DREAMSHARE</span>
 						<div>
 							{session ? (
 								<div className='flex items-center justify-center gap-4'>
@@ -94,8 +93,9 @@ export default function Home() {
 							SHARE YOUR <br />
 							HOLIDAY DREAM
 						</h1>
-						<p className='max-w-68 mx-auto text-xl font-extralight md:w-full'>And find the perfect partner to fullfill it</p>
-						<DynamicModal>
+						<p className='max-w-68 mx-auto text-xl font-normal md:w-full'>And find the perfect partner to fullfill it</p>
+						
+						<DynamicModal> 
 							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#661F20] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 								Find your holiday partner
 							</Button>
@@ -154,8 +154,8 @@ export default function Home() {
 					<HolidayImages ImageUrl='reduced/mesut' title='Extreme Sports and Expeditions' span={1} />
 					<HolidayImages ImageUrl='oppo' title='Games' span={1} />
 					<HolidayImages ImageUrl='culture' title='Culture and Education' span={2} />
-					<HolidayImages ImageUrl='reduced/mor-shani' title='Enjomet and Relaxation' span={2} />
-					<HolidayImages ImageUrl='sunshine' title='Trevelling' span={1} />
+					<HolidayImages ImageUrl='reduced/mor-shani' title='Enjoment and Relaxation' span={2} />
+					<HolidayImages ImageUrl='sunshine' title='Travelling' span={1} />
 				</div>
 			</section>
 
@@ -164,7 +164,7 @@ export default function Home() {
 				<h2 className='text-center text-2xl font-bold'>Create your holiday activity</h2>
 				<p className='my-6 text-center font-normal'>Hi! What are your holiday interests?</p>
 				<div className='flex flex-col items-center justify-center md:flex-row'>
-					<input className='text-md w-full rounded-md border p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' />
+					<input className='text-md w-full rounded-md border border-[#661F20] p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' aria-label=' search' />
 
 					<DynamicModal>
 						<Button variant='ghost' className='m-6 w-full rounded-3xl bg-[#661F20] text-white hover:border hover:border-[#661F20] hover:bg-white hover:text-[#661F20] md:max-w-[200px]' size='sm'>

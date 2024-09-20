@@ -74,3 +74,7 @@ https://www.npmjs.com/package/sharp
 const axios = (await import('axios')).default
 
 npm install depcheck
+
+https://blog.logrocket.com/dynamic-imports-code-splitting-next-js/
+
+npx unlighthouse --site <site url>
