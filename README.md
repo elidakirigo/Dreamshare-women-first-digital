@@ -10,8 +10,7 @@ DreamShare is a dynamic and responsive web application designed to enhance trave
 - **Axios**: Efficiently fetches live data from third-party APIs.
 - **NextAuth & Google Cloud Authentication**: Secure user authentication using Google.
 - **Cypress**: End-to-end testing for maintaining a bug-free application.
-- **ESLint + Prettier**: Ensures clean, consistent, and maintainable code.
-- **React-Toastify**: Displays intuitive notifications to enhance user interaction.
+- **ESLint + Prettier**: Ensures clean, consistent, and maintainable code. 
 - **CI/CD integration**: Unit, integration, and end-to-end Cypress tests are executed.
 
 ## API Integrations
@@ -93,6 +92,10 @@ The application is deployed using service **Vercel**.
 ## Performance Optimization
 
 Run Lighthouse or PageSpeed Insights and follow the recommendations to improve the performance, accessibility, and SEO scores. Include the results in your documentation.
+
+
+**final score** - https://pagespeed.web.dev/analysis/https-dreamshare-women-first-digital-vercel-app/jkl0euxxoy?form_factor=mobile
+
 
 ## Contributing
 

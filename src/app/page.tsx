@@ -43,7 +43,7 @@ export default function Home() {
 	return (
 		<main className='flex flex-col items-center justify-center'>
 			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
-			{/* <GoogleTagManager gtmId='G-E6QC2G1KE3' /> */}
+			<GoogleTagManager gtmId='G-E6QC2G1KE3' />
 
 			<header className='relative h-full min-h-[30rem] w-full'>
 				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' />
@@ -69,8 +69,7 @@ export default function Home() {
 									</Avatar>
 									<Button
 										onClick={async () => {
-											const SignOut = await import('next-auth/react').then((data) => data.signOut)
-
+											const SignOut = await import('next-auth/react').then((data) => data.signOut) 
 											SignOut()
 										}}
 										variant='ghost'
@@ -86,8 +85,7 @@ export default function Home() {
 										size='sm'
 										className='text-white'
 										onClick={async () => {
-											const SignIn = await import('next-auth/react').then((data) => data.signIn)
-
+											const SignIn = await import('next-auth/react').then((data) => data.signIn) 
 											SignIn('google')
 										}}>
 										Login
@@ -96,8 +94,7 @@ export default function Home() {
 										variant='outline'
 										className='rounded-3xl bg-transparent text-white'
 										onClick={async () => {
-											const SignIn = await import('next-auth/react').then((data) => data.signIn)
-
+											const SignIn = await import('next-auth/react').then((data) => data.signIn) 
 											SignIn('google')
 										}}
 										size='sm'>
