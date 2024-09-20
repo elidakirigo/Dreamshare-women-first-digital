@@ -23,9 +23,6 @@ type MovieResults = {
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 	
-	const DynamicStepImage = dynamic(() => import('@/components/StepImage'), { ssr: false })
-	
-	const DynamicPartnersAvatars = dynamic(() => import('@/components/PartnersAvatars'), { ssr: false })
 
 	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
@@ -118,7 +115,7 @@ export default function Home() {
 
 							return (
 								<div key={id} className='relative min-h-80 w-full md:min-h-[400px]'>
-									<DynamicStepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
+									<StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
 								</div>
 							)
 						})}
