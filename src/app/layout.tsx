@@ -21,9 +21,9 @@ export default async function RootLayout({
 }>) {
 	const session = await getServerSession(authOptions)
 
-	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager))
+	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager),{ssr:false})
 
-	const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleAnalytics))
+	const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleAnalytics), { ssr: false })
 
 	return (
 		<html lang='en'>
