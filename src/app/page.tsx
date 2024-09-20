@@ -22,6 +22,8 @@ type MovieResults = {
 }
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
+	
+	const DynamicAvatars = dynamic(() => import('@/components/PartnersAvatars'), { ssr: false })
 
 	const GoogleTagManager = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
@@ -156,10 +158,10 @@ export default function Home() {
 			<section className='px-3 py-6 text-center'>
 				<h2 className='text-center text-2xl font-bold'>Most Popular Celebs</h2>
 				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:max-w-[1100px] md:grid-cols-2 lg:grid-cols-4'>
-					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#661F20' />
-					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
-					<PartnersAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
-					<PartnersAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
+					<DynamicAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#661F20' />
+					<DynamicAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
+					<DynamicAvatars name='Marie Bennett' location='Currently living in Colorado. Lover of art, languages and travelling.' svg='pen' background='Fuchsia' />
+					<DynamicAvatars name='Christopher Pierce' location='Star Wars fanatic. I have a persistent enthusiasm to create new things.' svg='plane' background='cyan' />
 				</div>
 				<DynamicModal>
 					<Button variant='outline' className='mx-auto mt-4 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' size='sm'>
