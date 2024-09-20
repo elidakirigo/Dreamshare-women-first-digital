@@ -28,7 +28,7 @@ export default async function RootLayout({
 				<SessionProvider session={session}>
 					<GoogleTagManager gtmId='G-E6QC2G1KE3' />
 					{children}
-					<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string} />
+					<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
 				</SessionProvider>
 			</body>
 		</html>
