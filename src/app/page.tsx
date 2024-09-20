@@ -22,6 +22,10 @@ type MovieResults = {
 }
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
+	
+	const DynamicStepImage = dynamic(() => import('@/components/StepImage'), { ssr: false })
+	
+	const DynamicPartnersAvatars = dynamic(() => import('@/components/PartnersAvatars'), { ssr: false })
 
 	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
@@ -45,11 +49,8 @@ export default function Home() {
 			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
 			<GoogleTagManager gtmId='G-E6QC2G1KE3' />
 
-			<header className='relative h-full min-h-[30rem] w-full'>
-				{/* <AspectRatio ratio={16 / 9}> */}
-
+			<header className='relative h-full min-h-[30rem] w-full'> 
 				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' />
-				{/* </AspectRatio> */}
 
 				{/* homepage description and call to action */}
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/20 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
@@ -117,7 +118,7 @@ export default function Home() {
 
 							return (
 								<div key={id} className='relative min-h-80 w-full md:min-h-[400px]'>
-									<StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
+									<DynamicStepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
 								</div>
 							)
 						})}
