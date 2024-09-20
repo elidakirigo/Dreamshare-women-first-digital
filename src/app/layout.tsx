@@ -4,7 +4,7 @@ import { Montserrat } from 'next/font/google'
 import { SessionProvider } from '@/components/SessionProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
-
+import { Partytown } from '@builder.io/partytown/react'
 import dynamic from 'next/dynamic'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
@@ -29,10 +29,15 @@ export default async function RootLayout({
 	return (
 		<html lang='en'>
 			<link rel='icon' href='/favicon.svg' sizes='any' />
+			<Partytown debug={true} forward={['dataLayer.push']} />
+			<script
+				type='text/partytown'
+				dangerouslySetInnerHTML={{
+					__html: '/* Inlined Third-Party Script */',
+				}}
+			/>
 			<body className={montserrat.className}>
-				<SessionProvider session={session}>
-					{children}
-				</SessionProvider>
+				<SessionProvider session={session}>{children}</SessionProvider>
 			</body>
 		</html>
 	)

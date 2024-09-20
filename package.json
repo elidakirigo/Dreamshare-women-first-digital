@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "open": "cypress open",
@@ -12,9 +11,12 @@
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "analyzer": "ANALYZE=true npm run build"
+    "analyzer": "ANALYZE=true npm run build",
+    "build": "npm run partytown && next build",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "@next/bundle-analyzer": "^14.2.12",
     "@next/third-parties": "^14.2.12",
     "@radix-ui/react-aspect-ratio": "^1.1.0",

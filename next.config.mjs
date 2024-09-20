@@ -26,7 +26,7 @@ const nextConfig = {
 				headers: [
 					{
 						key: 'Cache-Control',
-						value: 'no-cache, must-revalidate, max-age=0', // Adjust for your needs
+						value: 'no-cache, must-revalidate,revalidate=10, max-age=0', // Adjust for your needs
 					},
 				],
 			},
