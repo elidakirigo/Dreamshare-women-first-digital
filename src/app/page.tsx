@@ -1,8 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { signOut, useSession } from 'next-auth/react'
-import PartnersAvatars from '@/components/PartnersAvatars'
+import { useSession } from 'next-auth/react'
 import HolidayImages from '@/components/HolidayImage'
 import { useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -22,7 +21,7 @@ type MovieResults = {
 }
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
-	
+
 	const DynamicAvatars = dynamic(() => import('@/components/PartnersAvatars'), { ssr: false })
 
 	const GoogleTagManager = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
@@ -72,7 +71,7 @@ export default function Home() {
 										onClick={async () => {
 											const SignOut = await import('next-auth/react').then((data) => data.signOut)
 
-											signOut()
+											SignOut()
 										}}
 										variant='ghost'
 										size='sm'
