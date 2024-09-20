@@ -23,9 +23,9 @@ type MovieResults = {
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
-	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
+	const GoogleTagManager = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
-	const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleAnalytics), { ssr: false })
+	const GoogleAnalytics = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleAnalytics), { ssr: false })
 
 	const { data: session } = useSession()
 
@@ -66,7 +66,15 @@ export default function Home() {
 												.toUpperCase()}
 										</AvatarFallback>
 									</Avatar>
-									<Button onClick={() => signOut()} variant='ghost' size='sm' className='text-white'>
+									<Button
+										onClick={async () => {
+											const SignOut = await import('next-auth/react').then((data) => data.signOut)
+
+											signOut()
+										}}
+										variant='ghost'
+										size='sm'
+										className='text-white'>
 										signOut
 									</Button>
 								</div>
@@ -86,7 +94,7 @@ export default function Home() {
 									<Button
 										variant='outline'
 										className='rounded-3xl bg-transparent text-white'
-										onClick={async() => {
+										onClick={async () => {
 											const SignIn = await import('next-auth/react').then((data) => data.signIn)
 
 											SignIn('google')
