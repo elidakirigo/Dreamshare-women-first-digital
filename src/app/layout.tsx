@@ -31,9 +31,7 @@ export default async function RootLayout({
 			<link rel='icon' href='/favicon.svg' sizes='any' />
 			<body className={montserrat.className}>
 				<SessionProvider session={session}>
-					<GoogleTagManager gtmId='G-E6QC2G1KE3' />
 					{children}
-					<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
 				</SessionProvider>
 			</body>
 		</html>

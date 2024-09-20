@@ -23,6 +23,10 @@ type MovieResults = {
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
+	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
+
+	const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleAnalytics), { ssr: false })
+
 	const { data: session } = useSession()
 
 	const [count, setCount] = useState(3)
@@ -38,6 +42,9 @@ export default function Home() {
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
+			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
+			<GoogleTagManager gtmId='G-E6QC2G1KE3' />
+
 			<header className='relative h-full min-h-[30rem] w-full'>
 				{/* <AspectRatio ratio={16 / 9}> */}
 
@@ -51,9 +58,9 @@ export default function Home() {
 						<h1 className='hidden font-bold text-white md:block'>DREAMSHARE</h1>
 						<div>
 							{session ? (
-								<div className='flex gap-4 items-center justify-center'>
-									<h1 className='text-white border border-white px-2 py-1 rounded-lg'>{session.user?.name} </h1>
-									<Avatar className='h-auto w-9 shadow-md border-2 border-black'>
+								<div className='flex items-center justify-center gap-4'>
+									<h1 className='rounded-lg border border-white px-2 py-1 text-white'>{session.user?.name} </h1>
+									<Avatar className='h-auto w-9 border-2 border-black shadow-md'>
 										<AvatarImage src={session?.user?.image as string} />
 										<AvatarFallback className='text-lg dark:bg-white dark:text-black' delayMs={1000}>
 											{session.user
@@ -104,12 +111,12 @@ export default function Home() {
 				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
 
 				{results.length > 0 ? (
-					<div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-start'>
+					<div className='mt-8 grid grid-cols-1 gap-6 text-start md:grid-cols-3'>
 						{results.slice(0, count).map(({ vote_average, backdrop_path, id, overview, original_title, name }: MovieResults) => {
 							const shortDescription = Trancate(overview, 100)
 
 							return (
-								<div key={id} className='relative w-full min-h-80 md:min-h-[400px]'>
+								<div key={id} className='relative min-h-80 w-full md:min-h-[400px]'>
 									<StepImage ImageUrl={`https://image.tmdb.org/t/p/original/${backdrop_path}`} vote={vote_average} title={original_title || name} description={shortDescription} />
 								</div>
 							)
