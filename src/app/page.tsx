@@ -11,6 +11,7 @@ import Link from 'next/link'
 import StepImage from '@/components/StepImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
 import Loading from '@/components/Loading'
+import { Partytown } from '@builder.io/partytown/react'
 
 type MovieResults = {
 	vote_average: number
@@ -22,7 +23,6 @@ type MovieResults = {
 }
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
-	
 
 	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
@@ -42,7 +42,9 @@ export default function Home() {
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
-			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
+			<Partytown debug={true} forward={['gtag']}>
+				<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
+			</Partytown>
 			{/* <GoogleTagManager gtmId='G-E6QC2G1KE3' /> */}
 
 			<header className='relative h-full min-h-[30rem] w-full'>
@@ -94,8 +96,8 @@ export default function Home() {
 							HOLIDAY DREAM
 						</h1>
 						<p className='max-w-68 mx-auto text-xl font-normal md:w-full'>And find the perfect partner to fullfill it</p>
-						
-						<DynamicModal> 
+
+						<DynamicModal>
 							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#661F20] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
 								Find your holiday partner
 							</Button>
