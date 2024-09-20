@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import PartnersAvatars from '@/components/PartnersAvatars'
 import HolidayImages from '@/components/HolidayImage'
 import { useState } from 'react'
@@ -72,10 +72,26 @@ export default function Home() {
 								</div>
 							) : (
 								<>
-									<Button variant='link' size='sm' className='text-white' onClick={() => signIn('google')}>
+									<Button
+										variant='link'
+										size='sm'
+										className='text-white'
+										onClick={async () => {
+											const SignIn = await import('next-auth/react').then((data) => data.signIn)
+
+											SignIn('google')
+										}}>
 										Login
 									</Button>
-									<Button variant='outline' className='rounded-3xl bg-transparent text-white' onClick={() => signIn('google')} size='sm'>
+									<Button
+										variant='outline'
+										className='rounded-3xl bg-transparent text-white'
+										onClick={async() => {
+											const SignIn = await import('next-auth/react').then((data) => data.signIn)
+
+											SignIn('google')
+										}}
+										size='sm'>
 										SignUp
 									</Button>
 								</>
