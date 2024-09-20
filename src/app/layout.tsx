@@ -5,7 +5,7 @@ import { SessionProvider } from '@/components/SessionProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
 
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import dynamic from 'next/dynamic'
 
 const montserrat = Montserrat({ weight: ['100', '500'], subsets: ['latin'] })
 
@@ -20,6 +20,10 @@ export default async function RootLayout({
 	children: React.ReactNode
 }>) {
 	const session = await getServerSession(authOptions)
+
+	const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleTagManager))
+
+	const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then((data) => data.GoogleAnalytics))
 
 	return (
 		<html lang='en'>

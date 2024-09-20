@@ -18,6 +18,7 @@ describe('example to-do app', () => {
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
     cy.visit('https://example.cypress.io/todo')
+    // cy.visit('https://dreamshare-women-first-digital.vercel.app/')
   })
 
   it('displays two todo items by default', () => {
