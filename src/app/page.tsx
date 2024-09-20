@@ -42,7 +42,7 @@ export default function Home() {
 
 	return (
 		<main className='flex flex-col items-center justify-center'>
-			{/* <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} /> */}
+			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
 			{/* <GoogleTagManager gtmId='G-E6QC2G1KE3' /> */}
 
 			<header className='relative h-full min-h-[30rem] w-full'>
