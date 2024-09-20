@@ -31,7 +31,7 @@ export default async function RootLayout({
 			<link rel='icon' href='/favicon.svg' sizes='any' />
 			<Partytown debug={true} forward={['dataLayer.push']} />
 			<script
-				type='text/partytown'
+				type='text/partytown' async
 				dangerouslySetInnerHTML={{
 					__html: '/* Inlined Third-Party Script */',
 				}}
