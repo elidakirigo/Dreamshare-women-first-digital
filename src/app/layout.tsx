@@ -28,16 +28,17 @@ export default async function RootLayout({
 	return (
 		<html lang='en'>
 			<Head>
-				<link rel='icon' href='/favicon.svg' sizes='any' /> 
+				<link rel='icon' href='/favicon.svg' sizes='any' />
 				<Partytown debug={true} forward={['dataLayer.push']} />
+
+				<script
+					type='text/partytown'
+					async
+					dangerouslySetInnerHTML={{
+						__html: '/* Inlined Third-Party Script * /',
+					}}
+				/>
 			</Head>
-			{/* <script
-				type='text/partytown' async
-				dangerouslySetInnerHTML={{
-					__html: '/* Inlined Third-Party Script * /',
-				}}
-			/> 
-			*/}
 			<body className={montserrat.className}>
 				<SessionProvider session={session}>{children}</SessionProvider>
 			</body>
