@@ -5,6 +5,6 @@ describe('Landing page', () => {
 
 	it('Contains correct header text', () => {
 		cy.contains('DREAMSHARE')
-		// cy.getDataTest('title-header').should('contain.text', 'DREAMSHARE')
+		cy.getDataTest('title-header').should('contain.text', 'DREAMSHARE')
 	})
 })
