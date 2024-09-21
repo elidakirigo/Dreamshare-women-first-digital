@@ -10,6 +10,7 @@ import StepImage from '@/components/StepImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
 import Loading from '@/components/Loading'
 import PartnersAvatars from '@/components/PartnersAvatars'
+import Link from 'next/link'
 
 type MovieResults = {
 	vote_average: number
@@ -21,8 +22,6 @@ type MovieResults = {
 }
 export default function Home() {
 	const DynamicModal = dynamic(async () => await import('@/components/Modal'), { ssr: false })
-
-	const DynamicLink = dynamic(async () => await import('next/link'), { ssr: false })
 
 	const GoogleTagManager = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
@@ -224,22 +223,22 @@ export default function Home() {
 						<h2 className='text-center font-bold md:text-start'>Company</h2>
 						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-normal text-gray-600 md:block'>
 							<li>
-								<DynamicLink href={'/About'}>About</DynamicLink>
+								<Link href={'/About'}>About</Link>
 							</li>
 							<li>
-								<DynamicLink href={'/Contact'}>Contact</DynamicLink>
+								<Link href={'/Contact'}>Contact</Link>
 							</li>
 							<li>
-								<DynamicLink href={'/Press'}>Press</DynamicLink>
+								<Link href={'/Press'}>Press</Link>
 							</li>
 							<li>
-								<DynamicLink href={'/Blog'}>Blog</DynamicLink>
+								<Link href={'/Blog'}>Blog</Link>
 							</li>
 							<li>
-								<DynamicLink href={'/Terms&Conditions'}>Terms and Privacy</DynamicLink>
+								<Link href={'/Terms&Conditions'}>Terms and Privacy</Link>
 							</li>
 							<li>
-								<DynamicLink href={'/Help'}>Help</DynamicLink>
+								<Link href={'/Help'}>Help</Link>
 							</li>
 						</ul>
 					</section>
