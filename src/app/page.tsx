@@ -47,7 +47,7 @@ export default function Home() {
 
 			<header className='relative h-full min-h-[30rem] w-full'>
 				{/* background main image */}
-				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' data-test='main-img' />
+				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 30%' data-test='main-img' />
 
 				{/* homepage description and call to action */}
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/60 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
