@@ -4,7 +4,7 @@ DreamShare is a dynamic and responsive web application designed to enhance trave
 
 ## Features
 
--  **Next.js**: Utilized for server-side rendering and optimized SEO performance.
+-  **Next.js + Typescript**: Utilized for server-side rendering and optimized SEO performance.
 -  **Shadcn-UI (Radix-UI)**: Provides accessible and customizable UI components.
 -  **Tailwind CSS**: Enables responsive design with utility-first CSS for quick layout development.
 -  **Axios**: Efficiently fetches live data from third-party APIs.
