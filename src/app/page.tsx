@@ -46,7 +46,7 @@ export default function Home() {
 			<GoogleTagManager gtmId='G-E6QC2G1KE3' />
 
 			<header className='relative h-full min-h-[30rem] w-full'>
-				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' />
+				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' data-test='main-img' />
 
 				{/* homepage description and call to action */}
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/60 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
@@ -89,7 +89,8 @@ export default function Home() {
 										onClick={async () => {
 											const SignIn = await import('next-auth/react').then((data) => data.signIn)
 											SignIn('google')
-										}}>
+										}}
+										data-test='login-test'>
 										Login
 									</Button>
 									<Button
@@ -99,7 +100,8 @@ export default function Home() {
 											const SignIn = await import('next-auth/react').then((data) => data.signIn)
 											SignIn('google')
 										}}
-										size='sm'>
+										size='sm'
+										data-test='signup-test'>
 										SignUp
 									</Button>
 								</>
@@ -110,13 +112,17 @@ export default function Home() {
 					{/* page call to to action */}
 					<div className='mt-16 text-center text-white'>
 						<div className='h-6'>
-							<span className='font-bold md:hidden'>DREAMSHARE</span>
+							<span className='font-bold md:hidden' data-test='hidden-header'>
+								DREAMSHARE
+							</span>
 						</div>
 						<h1 className='my-6 text-3xl font-bold md:text-5xl'>
 							SHARE YOUR <br />
 							HOLIDAY DREAM
 						</h1>
-						<p className='max-w-68 mx-auto text-xl font-normal md:w-full'>And find the perfect partner to fullfill it</p>
+						<p className='max-w-68 mx-auto text-xl font-normal md:w-full' data-test='CTO-test'>
+							And find the perfect partner to fullfill it
+						</p>
 
 						<DynamicModal>
 							<Button variant='ghost' className='mt-6 rounded-3xl bg-[#661F20] text-white hover:border hover:border-white hover:bg-transparent hover:text-white' size='sm'>
@@ -129,7 +135,9 @@ export default function Home() {
 
 			{/* How it works section / most trending movies */}
 			<section className='w-full max-w-[1100px] px-3 py-12 text-center'>
-				<h2 className='text-center text-2xl font-bold'>Most Trending Movies</h2>
+				<h2 className='text-center text-2xl font-bold' data-test='movies-test'>
+					Most Trending Movies
+				</h2>
 
 				{results.length > 0 ? (
 					<div className='mt-8 grid grid-cols-1 gap-6 text-start md:grid-cols-3'>
@@ -147,14 +155,16 @@ export default function Home() {
 					<Loading />
 				)}
 
-				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' onClick={Counter} size='sm'>
+				<Button variant='outline' className='mx-auto mt-6 w-full rounded-3xl border-2 border-[#661F20] bg-transparent text-[#661F20] hover:bg-[#661F20] hover:text-white md:w-auto' onClick={Counter} size='sm' data-test='readmore-test'>
 					Read More
 				</Button>
 			</section>
 
 			{/* holiday section */}
 			<section className='px-3 py-6 text-center'>
-				<h2 className='text-center text-2xl font-bold'>Most Popular Celebs</h2>
+				<h2 className='text-center text-2xl font-bold' data-test='celeb-test'>
+					Most Popular Celebs
+				</h2>
 				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:max-w-[1100px] md:grid-cols-2 lg:grid-cols-4'>
 					<PartnersAvatars name='Bradley Hunter' location='Based in Chicago. I love playing tennis and loud music.' svg='music' background='#661F20' />
 					<PartnersAvatars name='Diana Wells' location='Living in Athens, Greece. I love black and white classics, chillout music and green tea.' svg='camera' background='lime' />
@@ -170,7 +180,9 @@ export default function Home() {
 
 			{/* holiday ideas section */}
 			<section className='w-full px-3 py-6 md:max-w-[1100px]'>
-				<h2 className='text-center text-2xl font-bold'>Discover holiday activity ideas</h2>
+				<h2 className='text-center text-2xl font-bold' data-test='holiday-test'>
+					Discover holiday activity ideas
+				</h2>
 				<div className='mx-auto mt-4 grid w-full grid-cols-1 items-start gap-6 p-4 md:grid-cols-3'>
 					<HolidayImages ImageUrl='folco' title='Sports and Activities' span={1} />
 					<HolidayImages ImageUrl='food-bowl' title='Wellness and Health' span={1} />
@@ -184,8 +196,8 @@ export default function Home() {
 
 			{/* Create holiday activities section */}
 			<section className='w-full px-3 py-6 md:max-w-[600px]'>
-				<h2 className='text-center text-2xl font-bold'>Create your holiday activity</h2>
-				<p className='my-6 text-center font-normal'>Hi! What are your holiday interests?</p>
+				<h2 className='text-center text-2xl font-bold' data-test='holiday-activity'>Create your holiday activity</h2>
+				<p className='my-6 text-center font-normal' data-test='intrest-test'>Hi! What are your holiday interests?</p>
 				<div className='flex flex-col items-center justify-center md:flex-row'>
 					<input className='text-md w-full rounded-md border border-[#661F20] p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' aria-label=' search' />
 
