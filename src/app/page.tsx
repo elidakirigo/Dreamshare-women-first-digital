@@ -23,7 +23,6 @@ type MovieResults = {
 export default function Home() {
 	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
 
-
 	const GoogleTagManager = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
 	const GoogleAnalytics = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleAnalytics), { ssr: false })
@@ -43,14 +42,16 @@ export default function Home() {
 	return (
 		<main className='flex flex-col items-center justify-center'>
 			<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
-			<GoogleTagManager gtmId='G-E6QC2G1KE3' />
+			<GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
 
 			<header className='relative h-full min-h-[30rem] w-full'>
+				{/* background main image */}
 				<Image src='/assets/formatted/party-bg.webp' alt='party header image' className='min-h-[30rem] object-cover' fill={true} priority={true} sizes='(max-width: 768px) 50%, 50%' data-test='main-img' />
 
 				{/* homepage description and call to action */}
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/60 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
-					{/* login buttons */}
+				
+					{/* login buttons with nextAuth sessions*/}
 					<nav className='flex w-full max-w-[1100px] items-center justify-center md:justify-between'>
 						<span className='hidden font-bold text-white md:block' data-test='title-header'>
 							DREAMSHARE
@@ -196,8 +197,12 @@ export default function Home() {
 
 			{/* Create holiday activities section */}
 			<section className='w-full px-3 py-6 md:max-w-[600px]'>
-				<h2 className='text-center text-2xl font-bold' data-test='holiday-activity'>Create your holiday activity</h2>
-				<p className='my-6 text-center font-normal' data-test='intrest-test'>Hi! What are your holiday interests?</p>
+				<h2 className='text-center text-2xl font-bold' data-test='holiday-activity'>
+					Create your holiday activity
+				</h2>
+				<p className='my-6 text-center font-normal' data-test='intrest-test'>
+					Hi! What are your holiday interests?
+				</p>
 				<div className='flex flex-col items-center justify-center md:flex-row'>
 					<input className='text-md w-full rounded-md border border-[#661F20] p-2 font-normal text-black outline-none' type='search' name='search' placeholder='Enter your insterests' aria-label=' search' />
 
