@@ -6,7 +6,6 @@ import HolidayImages from '@/components/HolidayImage'
 import { useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
 import StepImage from '@/components/StepImage'
 import { UsefetchMovies } from '@/Hooks/UseMovies'
 import Loading from '@/components/Loading'
@@ -21,7 +20,9 @@ type MovieResults = {
 	name: string
 }
 export default function Home() {
-	const DynamicModal = dynamic(() => import('@/components/Modal'), { ssr: false })
+	const DynamicModal = dynamic(async () => await import('@/components/Modal'), { ssr: false })
+
+	const DynamicLink = dynamic(async () => await import('next/link'), { ssr: false })
 
 	const GoogleTagManager = dynamic(async () => await import('@next/third-parties/google').then((data) => data.GoogleTagManager), { ssr: false })
 
@@ -50,7 +51,6 @@ export default function Home() {
 
 				{/* homepage description and call to action */}
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/60 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
-				
 					{/* login buttons with nextAuth sessions*/}
 					<nav className='flex w-full max-w-[1100px] items-center justify-center md:justify-between'>
 						<span className='hidden font-bold text-white md:block' data-test='title-header'>
@@ -224,22 +224,22 @@ export default function Home() {
 						<h2 className='text-center font-bold md:text-start'>Company</h2>
 						<ul className='mt-4 inline-flex flex-wrap items-center justify-center gap-3 font-normal text-gray-600 md:block'>
 							<li>
-								<Link href={'/About'}>About</Link>
+								<DynamicLink href={'/About'}>About</DynamicLink>
 							</li>
 							<li>
-								<Link href={'/Contact'}>Contact</Link>
+								<DynamicLink href={'/Contact'}>Contact</DynamicLink>
 							</li>
 							<li>
-								<Link href={'/Press'}>Press</Link>
+								<DynamicLink href={'/Press'}>Press</DynamicLink>
 							</li>
 							<li>
-								<Link href={'/Blog'}>Blog</Link>
+								<DynamicLink href={'/Blog'}>Blog</DynamicLink>
 							</li>
 							<li>
-								<Link href={'/Terms&Conditions'}>Terms and Privacy</Link>
+								<DynamicLink href={'/Terms&Conditions'}>Terms and Privacy</DynamicLink>
 							</li>
 							<li>
-								<Link href={'/Help'}>Help</Link>
+								<DynamicLink href={'/Help'}>Help</DynamicLink>
 							</li>
 						</ul>
 					</section>
