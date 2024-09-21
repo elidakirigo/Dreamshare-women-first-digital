@@ -52,7 +52,9 @@ export default function Home() {
 				<div className='absolute left-0 top-0 h-full w-full bg-zinc-900/60 p-6 opacity-100 duration-500 md:flex md:flex-col md:items-center'>
 					{/* login buttons */}
 					<nav className='flex w-full max-w-[1100px] items-center justify-center md:justify-between'>
-						<span className='hidden font-bold text-white md:block'>DREAMSHARE</span>
+						<span className='hidden font-bold text-white md:block' data-test='title-header'>
+							DREAMSHARE
+						</span>
 						<div>
 							{session ? (
 								<div className='flex items-center justify-center gap-4'>
@@ -69,7 +71,7 @@ export default function Home() {
 									</Avatar>
 									<Button
 										onClick={async () => {
-											const SignOut = await import('next-auth/react').then((data) => data.signOut) 
+											const SignOut = await import('next-auth/react').then((data) => data.signOut)
 											SignOut()
 										}}
 										variant='ghost'
@@ -85,7 +87,7 @@ export default function Home() {
 										size='sm'
 										className='text-white'
 										onClick={async () => {
-											const SignIn = await import('next-auth/react').then((data) => data.signIn) 
+											const SignIn = await import('next-auth/react').then((data) => data.signIn)
 											SignIn('google')
 										}}>
 										Login
@@ -94,7 +96,7 @@ export default function Home() {
 										variant='outline'
 										className='rounded-3xl bg-transparent text-white'
 										onClick={async () => {
-											const SignIn = await import('next-auth/react').then((data) => data.signIn) 
+											const SignIn = await import('next-auth/react').then((data) => data.signIn)
 											SignIn('google')
 										}}
 										size='sm'>
