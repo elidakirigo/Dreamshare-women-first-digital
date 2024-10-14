@@ -1,0 +1,60 @@
+name: WFD Dreamshare Vercel Deployment
+
+env:
+  # Environment variables for Vercel organization and project IDs
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+  # Custom API environment variables
+  API_BASE_URL: ${{ secrets.TMDB_API_URL }}
+  API_KEY: ${{ secrets.TMDB_API_SECRET_KEY }}
+  NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
+  NEXT_PUBLIC_GA_CODE: ${{ secrets.NEXT_PUBLIC_GA_CODE }}
+
+on:
+  # Trigger deployment on every push to the 'main' branch
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy-development:
+    runs-on: ubuntu-latest # The environment where the job will run
+
+    steps:
+      # Step 1: Checkout the latest code from the repository
+      - uses: actions/checkout@v2
+
+      # Step 2: Install Node.js using GitHub Actions' setup-node
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+
+      # Step 3: Set up npm with Node.js version 20 and npm registry
+      - name: Install npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20" # Specify Node.js version 20
+          registry-url: "https://registry.npmjs.org/" # Use npm registry
+
+      # Step 4: Install project dependencies (packages specified in package.json)
+      - name: Install dependencies
+        run: npm install
+
+      # Step 5: Install Vercel CLI globally to use Vercel commands on the server
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      # Step 6: Pull environment configuration from Vercel (using the Vercel token for authentication)
+      # Note: Secrets like VERCEL_TOKEN should be set in GitHub repo settings > Secrets and Variables > Actions
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=development --token=${{ secrets.VERCEL_TOKEN }}
+
+      # Step 7: Build the project artifacts for production
+      # This generates a production build that Vercel will use to deploy
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      # Step 8: Deploy the prebuilt artifacts to Vercel
+      # The --prebuilt flag is used to deploy an already built project
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

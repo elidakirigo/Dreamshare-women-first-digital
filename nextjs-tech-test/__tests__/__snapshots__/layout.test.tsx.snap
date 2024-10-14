@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RootLayout matches the snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    Schema Markup
+  </div>
+  <h1>
+    Hello World
+  </h1>
+  <div>
+    Google Analytics
+  </div>
+</DocumentFragment>
+`;
