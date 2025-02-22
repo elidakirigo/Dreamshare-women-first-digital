@@ -4,6 +4,7 @@
 /Cecile_WFD_Public_key.asc
 notes
 .vscode
+.idea
 
 # dependencies
 /node_modules

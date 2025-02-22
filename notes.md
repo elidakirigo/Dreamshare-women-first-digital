@@ -78,3 +78,34 @@ npm install depcheck
 https://blog.logrocket.com/dynamic-imports-code-splitting-next-js/
 
 npx unlighthouse --site <site url>
+
+------------------------------------------------------------------------
+SEO meta tags and schema markups (relevant)	Good
+- SEO title, meta description
+- Lang attribute
+
+To Improve
+- No canonical tags or schema markups detected
+- No open graph tags added
+GTM + GA4 integration	✅
+Accessibility + modification to layout to meet this one	Good
+
+- There's a good balance and color contrast within most elements, and microinteractions.
+- Aria roles implemented, navigation via keyboard is also working.
+- Lighthouse reports passed the accessibility criteria with 100
+Codebase organisation, modularity, and maintainability	Good
+
+- Good use of environment variables
+- Code can be improved by data fetching on the server side (Good for SEO)
+- Good separation of concerns and folder structure.
+
+To improve
+
+- The home page could use some composition (Breaking the different sections into components)
+Technical writing/documentation of codebase and git commits updates	Good
+
+- Great Documentation
+
+To improve
+
+- Nice commit history but can be improved as most of the commit was (feature(google analytics) - add google analytics)

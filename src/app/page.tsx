@@ -88,9 +88,9 @@ export default function Home() {
             <div>
               {session ? (
                 <div className="flex items-center justify-center gap-4">
-                  <h1 className="rounded-lg border border-white px-2 py-1 text-white">
+                  <h2 className="rounded-lg border border-white px-2 py-1 text-white">
                     {session.user?.name}{" "}
-                  </h1>
+                  </h2>
                   <Avatar className="h-auto w-9 border-2 border-black shadow-md">
                     <AvatarImage src={session?.user?.image as string} />
                     <AvatarFallback
@@ -160,10 +160,10 @@ export default function Home() {
                 DREAMSHARE
               </span>
             </div>
-            <h1 className="my-6 text-3xl font-bold md:text-5xl">
+            <h2 className="my-6 text-3xl font-bold md:text-5xl">
               SHARE YOUR <br />
               HOLIDAY DREAM
-            </h1>
+            </h2>
             <p
               className="max-w-68 mx-auto text-xl font-normal md:w-full"
               data-test="CTO-test"
