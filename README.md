@@ -1,6 +1,6 @@
 # DreamShare [![WFD Cypress Tests](https://github.com/elidakirigo/Dreamshare-women-first-digital/actions/workflows/Cypress.yml/badge.svg?event=push)](https://github.com/elidakirigo/Dreamshare-women-first-digital/actions/workflows/Cypress.yml)
 
-DreamShare is a dynamic and responsive web application designed to enhance travel experiences by connecting users with popular movies and celebrities. Built with Next.js, Tailwind CSS, and other modern tools, it offers seamless integration with third-party APIs to fetch live data and ensure optimal performance across devices.
+DreamShare is a dynamic and responsive web application designed to enhance travel experiences by connecting users with popular movies and celebrities. Built with Next.js, Tailwind CSS, and other modern tools, it offers seamless integration with third-party APIs to fetch live data and ensure optimal performance across devices. get the full responsive documentation from [here](responsiveness.md)
 
 ## Features
 
@@ -12,6 +12,35 @@ DreamShare is a dynamic and responsive web application designed to enhance trave
 - **Cypress**: End-to-end testing for maintaining a bug-free application.
 - **ESLint + Prettier**: Ensures clean, consistent, and maintainable code.
 - **CI/CD integration**: Unit, integration, and end-to-end Cypress tests are executed.
+
+## Structure
+src
+├── app/
+│   ├── api/
+│      ├── auth/
+│         ├── [...nextauth]
+│            ├── route.ts
+│      ├── authoptions.ts
+│   ├── types/
+│      ├── users/
+│         ├── index.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+├── components/
+│   ├── ui/
+│   ├── HolidayImage.tsx
+│   ├── Loading.tsx
+│   ├── Modal.tsx
+│   ├── PartnersAvatars.tsx
+│   ├── SessionProvider.tsx
+│   ├── Skeleton.tsx
+│   ├── StepImage.tsx
+├── Hooks/
+│   ├── UseMovies.ts
+│   ├── UseProfile.ts
+├── lib/
+│   ├── utils.ts
 
 ## API Integrations
 
