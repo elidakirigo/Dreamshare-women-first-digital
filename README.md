@@ -1,6 +1,6 @@
 # DreamShare [![WFD Cypress Tests](https://github.com/elidakirigo/Dreamshare-women-first-digital/actions/workflows/Cypress.yml/badge.svg?event=push)](https://github.com/elidakirigo/Dreamshare-women-first-digital/actions/workflows/Cypress.yml)
 
-DreamShare is a dynamic and responsive web application designed to enhance travel experiences by connecting users with popular movies and celebrities. Built with Next.js, Tailwind CSS, and other modern tools, it offers seamless integration with third-party APIs to fetch live data and ensure optimal performance across devices. get the full responsive documentation from [here](responsiveness.md)
+DreamShare is a dynamic and responsive web application designed to enhance travel experiences by connecting users with popular movies and celebrities. Built with Next.js, Tailwind CSS, and other modern tools, it offers seamless integration with third-party APIs to fetch live data and ensure optimal performance across devices. get the full responsive documentation from [here](responsiveness.md). to get more on the project structure click [here](project-structure.md)
 
 ## Features
 
