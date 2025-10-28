@@ -109,3 +109,5 @@ Technical writing/documentation of codebase and git commits updates	Good
 To improve
 
 - Nice commit history but can be improved as most of the commit was (feature(google analytics) - add google analytics)
+
+npx lighthouse "https://dreamshare-women-first-digital.vercel.app" --output html --output-path ./lighthouse-report.html --chrome-flags="--headless" | tee lighthouse-cli.log
